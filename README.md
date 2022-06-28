@@ -11,21 +11,21 @@
 |-|Contrôle des connaissances|30%|Examen||<ul><li>- [ ] </li></ul>|
 |-|Projet - IoT Arduino |30%|Projet||<ul><li>- [ ] </li></ul>|
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen||<ul><li>- [ ] </li></ul>|
-|-|Sécurité et informatique légale|34%|Examen||<ul><li>- [] </li></ul>|
-|-|Calcul Parallèle|33%|BE||<ul><li>- [] </li></ul>|
+|-|Sécurité et informatique légale|34%|Examen||<ul><li>- [ ] </li></ul>|
+|-|Calcul Parallèle|33%|BE||<ul><li>- [ ] </li></ul>|
 |UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen||<ul><li>- [ ] </li></ul>|
 |-|Développement formel de systèmes|36%|Examen||<ul><li>- [ ] </li></ul>|
 |-|Projet - Développement formel de systèmes|24%|Projet||<ul><li>- [ ] </li></ul>|
-|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen||<ul><li>- [] </li></ul>|
-|-|TPs - Web sémantique|7.5%|TPs||<ul><li>- [] </li></ul>|
-|-|Recherche d'information|25%|Examen||<ul><li>- [] </li></ul>|
-|-|IHM (Interface Homme Machine)|25%|BE||<ul><li>- [] </li></ul>|
-|-|Sureté de fonctionnement|25%|TPs||<ul><li>- [] </li></ul>|
+|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen||<ul><li>- [ ] </li></ul>|
+|-|TPs - Web sémantique|7.5%|TPs||<ul><li>- [ ] </li></ul>|
+|-|Recherche d'information|25%|Examen||<ul><li>- [ ] </li></ul>|
+|-|IHM (Interface Homme Machine)|25%|BE||<ul><li>- [ ] </li></ul>|
+|-|Sureté de fonctionnement|25%|TPs||<ul><li>- [ ] </li></ul>|
 
 ### Schedule of JURY
 |内容|日期|是否结束|
 |:----:|:----:|:----:|
-|S9: Session 1||<ul><li>- [] </li></ul>|
+|S9: Session 1||<ul><li>- [ ] </li></ul>|
 |S9: Session 2||<ul><li>- [ ] </li></ul>|
 
 ### INTRODUCTION
