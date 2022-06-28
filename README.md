@@ -21,6 +21,7 @@
 |-|Recherche d'information|25%|Examen||<ul><li>- [ ] </li></ul>|
 |-|IHM (Interface Homme Machine)|25%|BE||<ul><li>- [ ] </li></ul>|
 |-|Sureté de fonctionnement|25%|TPs||<ul><li>- [ ] </li></ul>|
+|UE - à choix|||||<ul><li>- [ ] </li></ul>|
 
 ### Schedule of JURY
 |内容|日期|是否结束|
