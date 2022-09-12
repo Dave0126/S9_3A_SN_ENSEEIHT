@@ -21,8 +21,8 @@
 |-|Recherche d'information|25%|Examen|02/02|<ul><li>- [ ] </li></ul>|
 |-|IHM (Interface Homme Machine)|25%|BE/Examen|02/03|<ul><li>- [ ] </li></ul>|
 |-|Sureté de fonctionnement|25%|TPs||<ul><li>- [ ] </li></ul>|
-|UE - à choix|Infrastructure for Cloud|50%|Examen||<ul><li>- [ ] </li></ul>|
-|-|Infrastructure for Big Data|50%|Examen||<ul><li>- [ ] </li></ul>|
+|UE - à choix|Infrastructure for Cloud|50%|Examen|11/14|<ul><li>- [ ] </li></ul>|
+|-|Infrastructure for Big Data|50%|Examen|01/30|<ul><li>- [ ] </li></ul>|
 
 ### Schedule of JURY
 |内容|日期|是否结束|
