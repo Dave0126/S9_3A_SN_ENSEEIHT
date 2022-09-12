@@ -7,22 +7,21 @@
 ### 考试占比
 |UE|科目|占比|考核形式|日期|是否结束|
 |:----:|:----:|:----:|:----:|:----:|:----:|
-|UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01-06|<ul><li>- [ ] </li></ul>|
-|-|Contrôle des connaissances|30%|Examen|01-30|<ul><li>- [ ] </li></ul>|
+|UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01/06|<ul><li>- [ ] </li></ul>|
+|-|Contrôle des connaissances|30%|Examen|01/30|<ul><li>- [ ] </li></ul>|
 |-|Projet - IoT Arduino |30%|Projet||<ul><li>- [ ] </li></ul>|
-|UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12-06|<ul><li>- [ ] </li></ul>|
-|-|Sécurité et informatique légale|34%|Examen|12-12|<ul><li>- [ ] </li></ul>|
-|-|Calcul Parallèle|33%|BE|12-13|<ul><li>- [ ] </li></ul>|
-|UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01-31|<ul><li>- [ ] </li></ul>|
-|-|Développement formel de systèmes|36%|Examen|01-17|<ul><li>- [ ] </li></ul>|
+|UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06|<ul><li>- [ ] </li></ul>|
+|-|Sécurité et informatique légale|34%|Examen|12/12|<ul><li>- [ ] </li></ul>|
+|-|Calcul Parallèle|33%|BE|12/13|<ul><li>- [ ] </li></ul>|
+|UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01/31|<ul><li>- [ ] </li></ul>|
+|-|Développement formel de systèmes|36%|Examen|01/17|<ul><li>- [ ] </li></ul>|
 |-|Projet - Développement formel de systèmes|24%|Projet||<ul><li>- [ ] </li></ul>|
-|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12-14|<ul><li>- [ ] </li></ul>|
+|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/14|<ul><li>- [ ] </li></ul>|
 |-|TPs - Web sémantique|7.5%|TPs||<ul><li>- [ ] </li></ul>|
-|-|Recherche d'information|25%|Examen|02-02|<ul><li>- [ ] </li></ul>|
-|-|IHM (Interface Homme Machine)|25%|BE/Examen|02-03|<ul><li>- [ ] </li></ul>|
+|-|Recherche d'information|25%|Examen|02/02|<ul><li>- [ ] </li></ul>|
+|-|IHM (Interface Homme Machine)|25%|BE/Examen|02/03|<ul><li>- [ ] </li></ul>|
 |-|Sureté de fonctionnement|25%|TPs||<ul><li>- [ ] </li></ul>|
-|UE - à choix<br>|||||<ul><li>- [ ] </li></ul>|
-|-|Infrastructure for Cloud|50%|Examen||<ul><li>- [ ] </li></ul>|
+|UE - à choix|Infrastructure for Cloud|50%|Examen||<ul><li>- [ ] </li></ul>|
 |-|Infrastructure for Big Data|50%|Examen||<ul><li>- [ ] </li></ul>|
 
 ### Schedule of JURY
