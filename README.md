@@ -31,7 +31,7 @@
 |S9: Session 2||<ul><li>- [ ] </li></ul>|
 
 ### INTRODUCTION
-这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2022~2023学年-第1学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-3eme-annee-subprogram-n7i53-181.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。 
+这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2022~2023学年-第1学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-3eme-annee-subprogram-n7i53-181.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
 
 
 ### IMPORTANT: 
