@@ -70,7 +70,136 @@ $$
 	& \qquad D\_e\_C^{-1} [\{Doctorat\}] = D \\
 	& \qquad D\_e\_C [L] = \{License\} \\
 	& \text{Collage} \\
-	& \qquad ...
+	& \qquad ...\\
+	& \text{InscriptionLicense} \\
+	& \qquad \text{REFIVES} \quad \text{Inscription}\\
+	& \qquad \text{ANY} \quad s\\
+	& \qquad \text{WITH} \quad d:d=\text{License} )temoin\\
+	& \qquad \text{WHERE}\\
+	& \qquad \qquad grd1:\quad s \notin L \cup M \cup D\\
+	& \qquad \qquad grd2:\quad s \in Old\_Student\\
+	& \qquad \qquad grd3:\quad cord(L) < 30\\
+	& \qquad \text{THEN} \quad act1: L:=L\cup\{s\}\\
+	
+	& \text{PO:}\\
+	& \qquad \text{\_INV:}\\
+	& \qquad \qquad D\_e\_C^{-1} [\{L\}] = \{License\} \and \\
+	& \qquad \qquad L' = L \cup \{s\} \and \\
+	& \qquad \qquad D\_e\_C'= D\_e\_C \cup \{s \mapsto d\}  \and \\
+	& \qquad \qquad Stud' = Stud \cup \{s\} \and d=License\\
+	& \qquad \qquad \Rightarrow D\_e\_C^{-1} [\{L\}] = \{License\}\\
+	
+	& \text{GRD:}\\
+	& \qquad s \notin L \cup M \cup D \cap S \notin Old\_Stud\\
+	& \qquad \cap cord(L) < 30 \cap d=License \cap (invariants) \Rightarrow \\
+	& \qquad s \notin Stud \cap s \notin Old\_Stud \cap \\
+	& \qquad cord(D\_e\_C^{-1} [\{d\}]) < 30\\
+	
+	& \text{SIM:}\\
+	& \qquad (gardes \, A) \cap (gardes \, C) \cap (invariants) \cap d=License \cap L'=L \cup \{s\}\\
+	& \qquad \Rightarrow D\_e\_C' = D\_e\_C \cup \{s\mapsto d\} \cap Stud' = Stud \cup \{s\} \\
+	& \qquad L' \cup M \cup D\\
+	& \qquad \qquad = L\cup\{s\} \cup M \cup D \\
+	& \qquad \qquad = \{s\} \cup (L \cup M \cup D)\\
+	
+\end{align}
+$$
+
+
+
+
+
+## Exercise 2
+
+> Analyse:
+>
+> - `Func :`
+>   - allumer (ON + temp default) + eteindre
+>   - temperature modifiable
+>   - "+"/"-" changment temp
+>   - reset la temp (temp default)
+>   - temp "par default" = 18 dgree
+>   - temp min. = 7 degree
+>   - temp max. = 35 degree
+> - `SAFETY :`
+>   - $7 \le temp \le 35$
+> - `ENV :`
+>   - $T_{min} \le T_{max}$
+>   - $T_{min} \le T_{def} \le T_{max}$
+
+
+$$
+\begin{align}
+	&\text{CONTEXT} \quad ThermoCtx \\
+	&\text{SETS}\\
+	&\qquad \text{ETAT}\\
+	&\text{CONSTANTS}\\
+	&\qquad On, Off,\\
+	&\qquad T_{min}, T_{max}, T_{def}\\
+	&\text{AXIONS}\\
+	&\qquad axm1: partition(\text{ETAT},\{On\}, \{Off\}) \\
+	&\qquad axm2: T_{min} \in \Z \\
+	&\qquad axm3: T_{max} \in \Z \\
+	&\qquad axm4: T_{def} \in \Z \\
+	&\qquad axm5\quad(ENV1): T_{min} \le T_{max} \\
+	&\qquad axm6\quad(ENV2): T_{min} \le T_{def} \le T_{max} \\
+\end{align}
+$$
+
+$$
+\begin{align}
+	&\text{MACHINE} \quad Thermo \\
+	&\text{VARIABLES}\\
+	&\qquad etat, temp\\
+	&\text{INVARIANTS}\\
+	&\qquad inv1: \quad etat \in \text{ETAT} \\
+	&\qquad inv2: \quad temp \in \Z \\
+	&\qquad inv3: \quad etat = On \quad \Rightarrow T_{min} \le temp \and temp \le T_{max}\\
+	&\text{EVENTS}\\
+	&\qquad \text{INITIALISATION} \triangleq \\
+	&\qquad \qquad act1: \quad etat := Off \\
+	&\qquad \qquad act2: \quad temp :\in \Z \\
+	
+	&\qquad \text{Allumer} = \\
+	&\qquad \qquad WHEN \quad etat = Off \\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad act1: \quad etat := On \\
+	&\qquad \qquad \qquad act2: \quad temp := T_{def} \\
+	
+	&\qquad \text{Eteindre} = \\
+	&\qquad \qquad WHEN \quad etat = On \\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad act1: \quad etat := Off \\
+	
+	&\qquad \text{Reset} = \\
+	&\qquad \qquad WHEN \quad etat = On \\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad act1: \quad temp := T_{def} \\
+	
+	&\qquad \text{Augmenter} = \\
+	&\qquad \qquad WHEN \quad etat = On \\
+	&\qquad \qquad \qquad temp < T_{max} \\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad temp:1 \\
+	&\qquad \qquad \qquad temp' > temp \and temp' \le T_{max} \\
+	
+	&\qquad \text{Augmenter}^* = \\
+	&\qquad \qquad ANY \quad t \\
+	&\qquad \qquad WHEN\\
+	&\qquad \qquad \qquad t\in \Z , t > 0\\
+	&\qquad \qquad \qquad temp < T_{max}, etat = On \\
+	&\qquad \qquad \qquad temp+t \le T_{max}\\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad act1: \quad temp' := temp + t \\
+	&\qquad \qquad WITH \\
+	&\qquad \qquad \qquad t = 1 \\
+	
+	&\qquad \text{Diminuer} = \\
+	&\qquad \qquad WHEN \quad etat = On \\
+	&\qquad \qquad \qquad temp > T_{min} \\
+	&\qquad \qquad THEN \\
+	&\qquad \qquad \qquad temp:1 \\
+	&\qquad \qquad \qquad temp' < temp \and temp' \ge T_{min} \\
 \end{align}
 $$
 
