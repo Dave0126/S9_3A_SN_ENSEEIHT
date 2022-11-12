@@ -19,9 +19,9 @@
 |UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/14|<ul><li>- [ ] </li></ul>|
 |-|TPs - Web sémantique|7.5%|TPs||<ul><li>- [ ] </li></ul>|
 |-|Recherche d'information|25%|Examen|02/02|<ul><li>- [ ] </li></ul>|
-|-|IHM (Interface Homme Machine)|25%|BE/Examen|02/03|<ul><li>- [ ] </li></ul>|
+|-|IHM (Interface Homme Machine)|25%|BE|02/03|<ul><li>- [ ] </li></ul>|
 |-|Sureté de fonctionnement|25%|TPs||<ul><li>- [ ] </li></ul>|
-|UE - à choix|Infrastructure for Cloud|50%|Examen|11/14|<ul><li>- [ ] </li></ul>|
+|UE - à choix|Infrastructure for Cloud|50%|Examen|11/21|<ul><li>- [ ] </li></ul>|
 |-|Infrastructure for Big Data|50%|Examen|01/30|<ul><li>- [ ] </li></ul>|
 
 ### Schedule of JURY
