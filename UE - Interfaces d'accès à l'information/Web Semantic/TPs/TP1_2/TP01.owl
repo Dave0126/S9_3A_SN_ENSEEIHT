@@ -27,8 +27,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#contient"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
-        <rdfs:comment xml:lang="fr">aCapitale est une propriété objet qui signifie qu&apos;un pays a une capitale ville.
-La notion de souspropriété nous donne l&apos;implication suivante : Si un pays a pour capitale une ville, alors ce pays contient cette ville.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasCapitale is an object property which means that a country has a capital city.
+If a country has a city as its capital, then this country contains this city.</rdfs:comment>
         <rdfs:label xml:lang="fr">aCapitale</rdfs:label>
         <rdfs:label xml:lang="en">hasCapitale</rdfs:label>
     </owl:ObjectProperty>
@@ -41,10 +41,10 @@ La notion de souspropriété nous donne l&apos;implication suivante : Si un pays
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#joueDansFilm"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Artiste"/>
-        <rdfs:comment xml:lang="fr">aCommeActeur est une propriété objet pour dire qu&apos;un film donné à un ou plusieurs artiste.
-Cette propriété est l&apos;inverse de joueDansFilm.</rdfs:comment>
+        <rdfs:comment xml:lang="en">asActor is an object property to say that a movie given to one or more artists.
+This property is the inverse of playInMovie.</rdfs:comment>
         <rdfs:label xml:lang="fr">aCommeActeur</rdfs:label>
-        <rdfs:label xml:lang="en">hasActor</rdfs:label>
+        <rdfs:label xml:lang="en">asActor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -55,7 +55,7 @@ Cette propriété est l&apos;inverse de joueDansFilm.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Personne"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Genre"/>
-        <rdfs:comment xml:lang="fr">aGenre est une propriété objet pour dire qu&apos;une personne a forcément un seul genre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasGender is an object property to say that a person must have only one gender.</rdfs:comment>
         <rdfs:label xml:lang="fr">aGenre</rdfs:label>
         <rdfs:label xml:lang="en">hasGender</rdfs:label>
     </owl:ObjectProperty>
@@ -68,7 +68,7 @@ Cette propriété est l&apos;inverse de joueDansFilm.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Nationalité"/>
-        <rdfs:comment xml:lang="fr">aNationalité est une propriété objet pour dire qu&apos;un fim a une nationalité.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasNationality is an object property to say that a movie has a nationality.</rdfs:comment>
         <rdfs:label xml:lang="fr">aNationalité</rdfs:label>
         <rdfs:label xml:lang="en">hasNationality</rdfs:label>
     </owl:ObjectProperty>
@@ -82,7 +82,7 @@ Cette propriété est l&apos;inverse de joueDansFilm.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#réaliséPar"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Réalisateur"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
-        <rdfs:comment xml:lang="fr">aRéalisé est une propriété objet pour désigner qu&apos;un réalisateur à réalisé un certain film.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasDirected is an object property to designate that a director has directed a film.</rdfs:comment>
         <rdfs:label xml:lang="fr">aRéalisé</rdfs:label>
         <rdfs:label xml:lang="en">hasDirected</rdfs:label>
     </owl:ObjectProperty>
@@ -96,10 +96,9 @@ Cette propriété est l&apos;inverse de joueDansFilm.</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
-        <rdfs:comment xml:lang="fr">contient est une propriété objet qui siginife qu&apos;un lieu contient un autre lieu, par exemple l&apos;Europe contient la France.
-Grâce à la transitivité de la relation Contient, le raisonneur sait que l’Europe contient la France et Paris et la France contient Paris. Donc 
-Si un lieu A est situé dans un lieu B et que ce lieu B est situé dans un lieu C, alors le lieu A est situé dans le lieu C
-cette propriété est l&apos;inverse de situéDans.</rdfs:comment>
+        <rdfs:comment xml:lang="en">contains is an object property that means that a place contains another place.
+Thanks to the transitivity of the relation Contains, the reasoner knows that if a place A is located in a place B and this place B is located in a place C, then the place A is located in the place C
+This property is the inverse of locatedIn.</rdfs:comment>
         <rdfs:label xml:lang="en">contains</rdfs:label>
         <rdfs:label xml:lang="fr">contient</rdfs:label>
     </owl:ObjectProperty>
@@ -112,8 +111,8 @@ cette propriété est l&apos;inverse de situéDans.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Artiste"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
-        <rdfs:comment xml:lang="fr">joueDansFilm est une propriété objet pour dire qu&apos;un artiste donné a joué dans un film.
-Cette propriété est l&apos;inverse de CommeActeur.</rdfs:comment>
+        <rdfs:comment xml:lang="en">playInMovie is an object property to say that a given artist has acted in a movie.
+This property is the inverse of asActor.</rdfs:comment>
         <rdfs:label xml:lang="fr">joueDansFilm</rdfs:label>
         <rdfs:label xml:lang="en">playsInMovie</rdfs:label>
     </owl:ObjectProperty>
@@ -126,8 +125,8 @@ Cette propriété est l&apos;inverse de CommeActeur.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Réalisateur"/>
-        <rdfs:comment xml:lang="fr">RéaliséPar est une propriété objet pour désigner qu&apos;un film est réalisé par un réalisateur.
-Cette propriété est l&apos;inverse de aRéalisé.</rdfs:comment>
+        <rdfs:comment xml:lang="en">isDirectedBy is an object property to designate that a film is directed by a director.
+This property is the inverse of hasDirected.</rdfs:comment>
         <rdfs:label xml:lang="en">isDirectedBy</rdfs:label>
         <rdfs:label xml:lang="fr">réaliséPar</rdfs:label>
     </owl:ObjectProperty>
@@ -144,8 +143,8 @@ Cette propriété est l&apos;inverse de aRéalisé.</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#seDérouleDans"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#situéDans"/>
         </owl:propertyChainAxiom>
-        <rdfs:comment xml:lang="fr">seDérouleDans est une propriété object qui signifie un film se déroule dans un lieu donné.
-Le raisonneur déduit aussi que le filmMidnight in Paris s’est déroulé en France et en Europe puisque nous avons renseigné que le film s’est déroulé à Paris et grâce à la propriétése DérouleDans où nous avons précisé SuperProperty Of (Chain).</rdfs:comment>
+        <rdfs:comment xml:lang="en">takesPlaceIn is an object property that means a movie takes place in a given location.
+The reasoner also deduces that the film Midnight in Paris took place in France and in Europe since we informed that the film took place in Paris.</rdfs:comment>
         <rdfs:label xml:lang="fr">seDérouleDans</rdfs:label>
         <rdfs:label xml:lang="en">takePlaceIn</rdfs:label>
     </owl:ObjectProperty>
@@ -158,8 +157,8 @@ Le raisonneur déduit aussi que le filmMidnight in Paris s’est déroulé en Fr
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
-        <rdfs:comment xml:lang="fr">situéDans est une propriété objet qui siginife qu&apos;un lieu est situe dans un autre lieu, par exemple Paris est situé en France.
-cette propriété est l&apos;inverse de contient.</rdfs:comment>
+        <rdfs:comment xml:lang="en">locatedIn is an object property which means that a place is located in another place.
+This property is the inverse of contains.</rdfs:comment>
         <rdfs:label xml:lang="en">locatedIn</rdfs:label>
         <rdfs:label xml:lang="fr">situéDans</rdfs:label>
     </owl:ObjectProperty>
@@ -182,8 +181,8 @@ cette propriété est l&apos;inverse de contient.</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Durée">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Duration is a data object of type xsd:integer associated with a movie which designates the number of minutes of a movie</rdfs:comment>
         <rdfs:label xml:lang="en">Duration</rdfs:label>
-        <rdfs:label xml:lang="fr">Duration est un objet donnée de type xsd:integer associé à un film qui désigne le nombre de minutes d&apos;un film</rdfs:label>
         <rdfs:label xml:lang="fr">Durée</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -194,7 +193,7 @@ cette propriété est l&apos;inverse de contient.</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Note">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
-        <rdfs:comment xml:lang="fr">Note est un objet donnée de typé ref:PlainLiteral assoicié à un film donné qui désigne un petit descriptif du film.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Note is a data object of type ref:PlainLiteral associated with a given movie which designates a summary description of the movie.</rdfs:comment>
         <rdfs:label xml:lang="fr">Note</rdfs:label>
         <rdfs:label xml:lang="en">Summary</rdfs:label>
     </owl:DatatypeProperty>
@@ -227,9 +226,10 @@ cette propriété est l&apos;inverse de contient.</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Artiste"/>
-        <rdfs:comment xml:lang="fr">Acteur est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne de genre masculin ayant joué dans un ou plusieurs films ne soit pas un acteur.
-Cela permet d&apos;avoir la propriété de joueDansFilm, comme Acteur est une sous classe de Personne elle hérité la propriété objet aGenre qui vaut Homme pour cette classe.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">This is a person of male gender who has played in one or more films.
+This makes it possible to have the property of playsInMovie.
+As Actress is a subclass of Person, it inherited the object property hasGender which is set to Man for this class.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="en">Actor</rdfs:label>
         <rdfs:label xml:lang="fr">Comédien</rdfs:label>
     </owl:Class>
@@ -251,9 +251,10 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Artiste"/>
-        <rdfs:comment xml:lang="fr">Actrice est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne de genre féminin ayant joué dans un ou plusieurs films ne soit pas une actrice.
-Cela permet d&apos;avoir la propriété de joueDansFilm, comme Actrice est une sous classe de Personne elle hérité la propriété objet aGenre qui vaut Femme pour cette classe.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a person of female gender who has played in one or more films.
+This makes it possible to have the property of playsInMovie.
+As Actress is a subclass of Person, it inherited the object property hasGender which is set to Woman for this class.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="en">Actress</rdfs:label>
         <rdfs:label xml:lang="fr">Comédienne</rdfs:label>
     </owl:Class>
@@ -270,9 +271,10 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="fr">Artiste est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne ayant joué dans un ou plusieurs films ne soit pas un artiste.
-Cela permet d&apos;avoir le fait qu&apos;un artiste a forcément joué dans un ou plusieurs films, comme Artiste est une sous classe de Personne elle hérité la propriété objet aGenre.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a person who has acted in one or more films.
+An artist has necessarily played in one or more films.
+As Artist is a subclass of Person, it inherited the hasGender property.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="en">Artist</rdfs:label>
         <rdfs:label xml:lang="fr">Artiste</rdfs:label>
     </owl:Class>
@@ -285,10 +287,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Pays"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville"/>
-        <rdfs:comment xml:lang="fr">Le Continent est déclaré comme une classe d&apos;équivalence pour éviter qu&apos;une place équivalente à un contient ne le soit pas.
-Cela permet d&apos;hériter toutes la propriété de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.
-Cette classe est disjointe avec la classe Pays et Ville, ça veut dire qu&apos;un Continent ne peut pas être un Pays ou une Ville.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Continent is declared as an equivalence class to avoid that a place equivalent to a contains is not.
+As well as this class allows to have labels by languages.
+This class is disjoint with the Country and City class, which means that a Continent cannot be a Country or a City.</rdfs:comment>
         <rdfs:label xml:lang="en">Continent</rdfs:label>
         <rdfs:label xml:lang="fr">Continent</rdfs:label>
     </owl:Class>
@@ -320,10 +321,10 @@ Cette classe est disjointe avec la classe Pays et Ville, ça veut dire qu&apos;u
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Long-Métrage"/>
-        <rdfs:comment xml:lang="fr">Le Court-Métrage est déclaré comme une classe d&apos;équivalence pour éviter qu&apos;un film dont la durée est inférieure à 60 minutes ne soit pas un court métrage.
-Cela permet d&apos;hériter toutes les propriétés de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.
-Cette classe est disjointe avec la classe Long-Métrage, ça veut dire qu&apos;un Court-Métrage ne peut pas être un Long-Métrage.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It is a film whose duration is less than 60 minutes.
+It inherits all the properties of the Movie class.
+As well as this class allows to have labels by languages.
+This class is separate from the Feature-Film class, which means that a Short-Film cannot be a Feature-Film.</rdfs:comment>
         <rdfs:label xml:lang="fr">Court métrage</rdfs:label>
         <rdfs:label xml:lang="en">Short film</rdfs:label>
     </owl:Class>
@@ -345,11 +346,11 @@ Cette classe est disjointe avec la classe Long-Métrage, ça veut dire qu&apos;u
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Personne"/>
+        <rdfs:comment xml:lang="en">Woman is a person with a Female gender.
+Since Woman is a subclass of Person, it inherits the hasGender object property.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="fr">Femme</rdfs:label>
-        <rdfs:label xml:lang="fr">Femme est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne ayant un genre féminin ne soit pas une femme.
-Comme Femme est une sous classe de Personne elle hérité la propriété objet aGenre.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:label>
-        <rdfs:label xml:lang="fr">Women</rdfs:label>
+        <rdfs:label xml:lang="en">Women</rdfs:label>
     </owl:Class>
     
 
@@ -389,9 +390,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
                 <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="fr">Le Film est déclaré comme une classe tel que un film contient différents types de films.
-Cela permet d&apos;avoir plusieurs propriétés objets comme aNationalité, RéaliséPar et seDérouleDans, ainsi qu&apos;avoir des propriétés données comme durée et note.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Film is declared as a class such that a film contains different types of films.
+This allows having multiple object properties like aNationality, DoneBy, and OccursIn, as well as having given properties like duration and rating.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="fr">Film</rdfs:label>
         <rdfs:label xml:lang="en">Movie</rdfs:label>
     </owl:Class>
@@ -408,9 +409,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
-        <rdfs:comment xml:lang="fr">Le Film-Européen est déclaré comme une classe d&apos;équivalence pour éviter qu&apos;un film dont la nationalité est associé à un pays d&apos;Europe ne soit pas un film européen.
-Cela permet d&apos;hériter toutes les propriétés de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It is a class of film whose nationality is associated with a European country.
+It inherits all the properties of the Movie class.
+As well as this class allows to have labels by languages.</rdfs:comment>
         <rdfs:label xml:lang="en">European movie</rdfs:label>
         <rdfs:label xml:lang="fr">Film Européen</rdfs:label>
     </owl:Class>
@@ -420,9 +421,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues.</rdfs:comment
     <!-- http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Genre -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Genre">
-        <rdfs:comment xml:lang="fr">Le genre est déclaré comme une classe avec des instances pour pouvoir modifier au besoin la liste des instances possibles(Masculin, Féminin, Autre).
-Cela permet d&apos;avoir une propriété aGenre et effectuer des tests sur sa valeur.
-Cela permet également d&apos;avoir les labels par langues et des commentaires pour chaque instance de genre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The gender is declared as a class with instances to be able to modify the list of possible instances as needed (Male, Female).
+This allows to have an aGenre property and perform tests on its value.
+It also allows to have the labels by languages and comments for each gender instance.</rdfs:comment>
         <rdfs:label xml:lang="en">Gender</rdfs:label>
         <rdfs:label xml:lang="fr">Genre</rdfs:label>
     </owl:Class>
@@ -444,10 +445,10 @@ Cela permet également d&apos;avoir les labels par langues et des commentaires p
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Personne"/>
+        <rdfs:comment xml:lang="en">Man is a person with a Male gender.
+Since Man is a subclass of Person, it inherits the hasGender object property.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="fr">Homme</rdfs:label>
-        <rdfs:label xml:lang="fr">Homme est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne ayant un genre masculin ne soit pas un homme.
-Comme Homme est une sous classe de Personne elle hérité la propriété objet aGenre.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:label>
         <rdfs:label xml:lang="en">Man</rdfs:label>
     </owl:Class>
     
@@ -462,9 +463,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="fr">Le Lieu est déclaré comme une classe tel que un Lieu soit une ville, un pays ou un continent.
-Cela permet d&apos;avoir une propriété objet situéDans.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Location is a class that a Location is a city, a country or a continent.
+This makes it possible to have an object property locatedIn.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="fr">Lieu</rdfs:label>
         <rdfs:label xml:lang="en">Place</rdfs:label>
     </owl:Class>
@@ -495,10 +496,10 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Film"/>
-        <rdfs:comment xml:lang="fr">Le Long-Métrage est déclaré comme une classe d&apos;équivalence pour éviter qu&apos;un film dont la durée est supérieure ou égale à 60 minutes ne soit pas un long métrage.
-Cela permet d&apos;hériter toutes les propriétés de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.
-Cette classe est disjointe avec la classe Court-Métrage, ça veut dire qu&apos;un Long-Métrage ne peut pas être un Court-Métrage.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It is a film whose duration is greater than or equal to 60 minutes.
+It inherits all the properties of the Movie class.
+As well as this class allows to have labels by languages.
+This class is separate from the Short-Film class, which means that a Feature-Film cannot be a Short-Film</rdfs:comment>
         <rdfs:label xml:lang="en">Feature film</rdfs:label>
         <rdfs:label xml:lang="fr">Long métrage</rdfs:label>
     </owl:Class>
@@ -508,8 +509,8 @@ Cette classe est disjointe avec la classe Court-Métrage, ça veut dire qu&apos;
     <!-- http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Nationalité -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Nationalité">
-        <rdfs:comment xml:lang="fr">La Nationalité est déclaré comme une classe avec des instances pour pouvoir modifier au besoin la liste des instances possibles(Français).
-Cela permet également d&apos;avoir les labels par langues et des commentaires pour chaque instance de genre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Nationality is a class with instances to be able to modify the list of possible instances (French) as needed.
+It also allows to have the labels by languages and comments for each gender instance.</rdfs:comment>
         <rdfs:label xml:lang="en">Nationality</rdfs:label>
         <rdfs:label xml:lang="fr">Nationalité</rdfs:label>
     </owl:Class>
@@ -528,10 +529,9 @@ Cela permet également d&apos;avoir les labels par langues et des commentaires p
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville"/>
-        <rdfs:comment xml:lang="fr">Le Pays est déclaré comme une classe d&apos;équivalence pour éviter qu&apos;une place équivalente à un pays ne le soit pas.
-Cela permet d&apos;hériter toutes la propriété de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.
-Cette classe est disjointe avec la classe Continent et Ville, ça veut dire qu&apos;un Pays ne peut pas être un Continent ou une Ville.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Country is declared as an equivalence class to avoid that a place equivalent to a country is not.
+As well as this class allows to have labels by languages.
+This class is disjoint with the Continent and City class, which means that a Country cannot be a Continent or a City.</rdfs:comment>
         <rdfs:label xml:lang="en">Country</rdfs:label>
         <rdfs:label xml:lang="fr">Pays</rdfs:label>
     </owl:Class>
@@ -548,9 +548,9 @@ Cette classe est disjointe avec la classe Continent et Ville, ça veut dire qu&a
                 <owl:onClass rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Genre"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="fr">Personne est déclarée comme une classe tel que une personne contient différents types de personnes.
-Cela permet d&apos;avoir le fait qu&apos;une personne a forcément un genre.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person is a class that a person contains different types of Person.
+A person necessarily has a gender.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <rdfs:label xml:lang="fr">Personne</rdfs:label>
     </owl:Class>
@@ -573,9 +573,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Personne"/>
-        <rdfs:comment xml:lang="fr">Réalisateur est déclarée comme une classe d&apos;équivalence pour éviter qu&apos;une personne ayant réalisé un ou plusieurs films ne soit pas un réalisateur.
-Comme Réalisateur est une sous classe de Personne elle hérité la propriété objet aGenre.
-Ainsi que cette classe permet d&apos;avoir des labels par langues et des commentaires pour chaque sous classe.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a person who has directed one or more films.
+Since Director is a subclass of Person, it inherits the hasGender object property.
+As well as this class allows to have labels by languages and comments for each subclass.</rdfs:comment>
         <rdfs:label xml:lang="en">Director</rdfs:label>
         <rdfs:label xml:lang="fr">Réalisateur</rdfs:label>
     </owl:Class>
@@ -603,10 +603,9 @@ Ainsi que cette classe permet d&apos;avoir des labels par langues et des comment
 
     <owl:Class rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Lieu"/>
-        <rdfs:comment xml:lang="fr">Le VIlle est déclaré comme une une classe d&apos;équivalence pour éviter qu&apos;une place équivalente à une ville ne le soit pas.
-Cela permet d&apos;hériter toutes la propriété de la classe Film.
-Ainsi que cette classe permet d&apos;avoir des labels par langues.
-Cette classe est disjointe avec la classe Continent et Pays, ça veut dire qu&apos;un VIlle ne peut pas être un Continent ou un Pays.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The City is declared as an equivalence class to avoid that a place equivalent to a city is not.
+As well as this class allows to have labels by languages.
+This class is disjoint with the Continent and Country class, which means that a City cannot be a Continent or a Country.</rdfs:comment>
         <rdfs:label xml:lang="en">City</rdfs:label>
         <rdfs:label xml:lang="fr">Ville</rdfs:label>
     </owl:Class>
@@ -649,7 +648,6 @@ Cette classe est disjointe avec la classe Continent et Pays, ça veut dire qu&ap
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#France">
         <rdf:type rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Pays"/>
         <aCapitale rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Paris"/>
-        <aCapitale rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville_Lumiere"/>
         <situéDans rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Europe"/>
         <rdfs:label xml:lang="en">France</rdfs:label>
         <rdfs:label xml:lang="fr">France</rdfs:label>
@@ -748,14 +746,6 @@ Cette classe est disjointe avec la classe Continent et Pays, ça veut dire qu&ap
         <réaliséPar rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Michel_Hazanavicius"/>
         <Durée rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Durée>
         <Note xml:lang="en">Peppy Miller falls in love with the silent film star George Valentin. Things change when Peppy becomes a famous actor while George&apos;s career goes downhill with the introduction of talkies.</Note>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville_Lumiere -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville_Lumiere">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hmoudden/ontologies/2022/10/tp01#Ville"/>
     </owl:NamedIndividual>
     
 
