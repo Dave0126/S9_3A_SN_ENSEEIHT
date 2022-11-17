@@ -1,0 +1,17 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix tp:    <http://www.semanticweb.org/nathalie/ontologies/cinemaTP#> .
+
+tp:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass tp:Personne ; # Applies to all persons
+    sh:property [              # _:b0
+        sh:path rdfs:label ;       # constrains the values of rdfs:label
+        sh:minCount 1 ;
+    ] ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    .
+ ###### add SHACL vocabulary ###### 

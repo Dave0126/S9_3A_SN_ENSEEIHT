@@ -1,0 +1,26 @@
+TP1
+. installer PRotégé
+. faire l'ontologie du cinéma
+. cours sur RDFs et OWL
+. finir l'ontologie comme travail personnel
+. la rendre avant le TP suivant
+
+William crée un entrepôt GraphDB dans lequel chacun peut créer son repository
+
+TP2
+. ils doivent créer leur repository dans GraphDB
+. leur fournir à tous le même graphe de K basé sur une même ontologie du cinéma instanciée
+> TODO : trouver des bugs dans l'ontologie ou en créer)
+. ajouter le plugin shacl create à Protégé
+. cours SHACL / proposer des shapes qui ne sont pas respectés dans la base
+> 
+
+TP3 : SPARQL
+. mini cours SPARQL et miniDBPedia
+. requêtes simples sur DBPedia
+. requêtes modification ou insert avec onto-cinema
+. requête create qui corrige la base :	
+	ajouter les fims necessaires pour que tout acteur joue dans un film
+	
+	
+	
