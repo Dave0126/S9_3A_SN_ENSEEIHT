@@ -9,13 +9,13 @@
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01/06||
 |-|Langage pour le temps réel|30%|Examen|01/30||
-|-|Projet - IoT Arduino |30%|Projet|||
+|-|Projet - IoT Arduino |30%|Projet|已组队||
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06||
 |-|Sécurité et informatique légale|34%|Examen|01/16||
 |-|Calcul Parallèle|33%|BE|12/13||
 |UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01/31||
 |-|Développement formel de systèmes|36%|Examen|01/17||
-|-|Projet - Développement formel de systèmes|24%|Projet|||
+|-|Projet - Développement formel de systèmes|24%|Projet|未开始||
 |UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/02||
 |-|TPs - Web sémantique|7.5%|TPs|TP1 已完成||
 |-|Recherche d'information|25%|Examen|02/02||
