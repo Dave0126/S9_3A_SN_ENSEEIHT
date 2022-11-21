@@ -11,7 +11,7 @@
 |-|Langage pour le temps réel|30%|Examen|01/30||
 |-|Projet - IoT Arduino |30%|Projet|||
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06||
-|-|Sécurité et informatique légale|34%|Examen|12/12||
+|-|Sécurité et informatique légale|34%|Examen|01/16||
 |-|Calcul Parallèle|33%|BE|12/13||
 |UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01/31||
 |-|Développement formel de systèmes|36%|Examen|01/17||
