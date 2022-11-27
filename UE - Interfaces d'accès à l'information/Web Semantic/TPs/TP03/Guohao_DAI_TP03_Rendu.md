@@ -1,6 +1,7 @@
 # TP3 - SPARQL
 
 - <u>***Author***</u> : Guohao DAI (L1)
+- <u>***Date***</u> : November 27, 2022
 
 ## 2 DBpedia
 
