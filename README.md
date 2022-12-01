@@ -15,12 +15,12 @@
 |-|Calcul Parallèle|33%|BE|12/13||
 |UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01/31||
 |-|Développement formel de systèmes|36%|Examen|01/17||
-|-|Projet - Développement formel de systèmes|24%|Projet|未开始||
-|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/02||
-|-|TPs - Web sémantique|7.5%|TPs|TP1 已完成||
+|-|Projet - Développement formel de systèmes|24%|Projet|12/02||
+|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/13||
+|-|TPs - Web sémantique|7.5%|TPs|TP02 (个别未完成)||
 |-|Recherche d'information|25%|Examen|02/02||
 |-|IHM (Interface Homme Machine)|25%|Examen|02/03||
-|-|Sureté de fonctionnement|25%|TPs|TP1 已完成||
+|-|Sureté de fonctionnement|25%|TPs|TP02 (进行中)||
 |UE - à choix|Infrastructure for Cloud|50%|Examen|11/21|✅|
 |-|Infrastructure for Big Data|50%|Examen|01/30||
 
