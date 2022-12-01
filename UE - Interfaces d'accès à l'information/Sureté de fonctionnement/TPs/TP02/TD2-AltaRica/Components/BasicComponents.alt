@@ -11,16 +11,23 @@ class NonRepairableComponent
 end
 
 class RepairableComponent
-
-
+	extends NonRepairableComponent;
+	event evRepair (delay = exponential(pMeu));
+	parameter Real pMeu = 0.025;
+	transition 
+		evRepair: not vsWorking -> vsWorking := true;
 end
 
 class NonRepairableInOutComponent
- 
-
+	extends NonRepairableComponent;
+	Boolean vfInput, vfOutput (reset = false);
+	assertion
+		vfOutput := if vsWorking then vfInput else false;
 end
 
 class RepairableInOutComponent
- 
-
+	extends RepairableComponent;
+	Boolean vfInput, vfOutput (reset = false);
+	assertion
+		vfOutput := if vsWorking then vfInput else false;
 end

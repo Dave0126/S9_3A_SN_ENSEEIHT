@@ -4,6 +4,6 @@
 
 block Test
 	GroundStationSubSystem GS;
-//	SatelliteSubSystem Sat;
+	SatelliteSubSystem Sat;
 
 end

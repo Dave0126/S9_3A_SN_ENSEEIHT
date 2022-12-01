@@ -8,4 +8,5 @@
     <folder name="Exercise2">
         <file name="Exercise2.alt" path="Exercise2/Exercise2.alt"/>
     </folder>
+    <file name="Test.gts" path="Test.gts"/>
 </project>

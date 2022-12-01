@@ -9,6 +9,12 @@ class SatelliteSubSystem
 
 	// Components
     // ...
+	NonRepairableInOutComponent Battery1;
+	NonRepairableInOutComponent Battery2;
+	NonRepairableInOutComponent Transmitter1;
+	NonRepairableInOutComponent Transmitter2;
+	NonRepairableInOutComponent Receiver1;
+	NonRepairableInOutComponent Receiver2;
 	
 	Boolean vfOutput( reset = false );
 
@@ -17,5 +23,10 @@ class SatelliteSubSystem
 		Battery1.vfInput := true;
 		Battery2.vfInput := true;
 		// ...
+		Transmitter1.vfInput := Battery1.vfOutput or Battery2.vfOutput;
+		Transmitter2.vfInput := Battery1.vfOutput or Battery2.vfOutput;
+		Receiver1.vfInput := Transmitter1.vfOutput or Transmitter2.vfOutput;
+		Receiver2.vfInput := Transmitter1.vfOutput or Transmitter2.vfOutput;
 		// vfOutput := ...;	
+		vfOutput := Receiver1.vfOutput or Receiver2.vfOutput;
 end
