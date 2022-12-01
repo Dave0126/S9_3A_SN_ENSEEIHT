@@ -1,0 +1,19 @@
+
+/* Radar subsystem 
+*  represented by a block diagram modeling pattern with repairable components 
+*
+*/
+class GroundStationSubSystem
+	// Parameters
+	// ...
+
+    // Components
+	// ...
+	Boolean vfOutput ( reset = false );
+
+	// Connections
+	assertion
+		Antenna.vfInput := true;
+		// ...
+		// vfOutput := ...;
+end 

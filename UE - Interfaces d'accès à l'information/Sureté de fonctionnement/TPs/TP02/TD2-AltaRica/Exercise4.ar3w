@@ -1,0 +1,11 @@
+<!DOCTYPE AltaRicaWizard>
+<project name="Exercise4">
+    <folder name="Components">
+        <file name="BasicComponents.alt" path="Components/BasicComponents.alt"/>
+        <file name="GroundStation-RBD.alt" path="Components/GroundStation-RBD.alt"/>
+        <file name="Satellite-RBD.alt" path="Components/Satellite-RBD.alt"/>
+    </folder>
+    <folder name="Exercise4">
+        <file name="System.alt" path="Exercise4/System.alt"/>
+    </folder>
+</project>

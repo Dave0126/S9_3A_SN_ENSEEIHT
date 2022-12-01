@@ -1,0 +1,26 @@
+
+/* Basic classes for non repairable and repairable components */
+
+class NonRepairableComponent
+  Boolean vsWorking (init = true);
+  event evFailure (delay = exponential(pLambda));
+  parameter Real pLambda = 1.0e-5;
+
+  transition
+    evFailure: vsWorking -> vsWorking := false;
+end
+
+class RepairableComponent
+
+
+end
+
+class NonRepairableInOutComponent
+ 
+
+end
+
+class RepairableInOutComponent
+ 
+
+end

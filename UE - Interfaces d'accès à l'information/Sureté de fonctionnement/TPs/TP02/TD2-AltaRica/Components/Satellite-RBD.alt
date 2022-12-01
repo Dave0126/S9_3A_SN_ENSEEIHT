@@ -1,0 +1,21 @@
+
+/*  Satellite subsystem 
+*	represented by a block diagram modeling pattern with non repairable components
+*/
+
+class SatelliteSubSystem
+	// parameters
+	// ...
+
+	// Components
+    // ...
+	
+	Boolean vfOutput( reset = false );
+
+	// Connections
+	assertion
+		Battery1.vfInput := true;
+		Battery2.vfInput := true;
+		// ...
+		// vfOutput := ...;	
+end

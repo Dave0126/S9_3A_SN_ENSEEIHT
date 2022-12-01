@@ -1,0 +1,9 @@
+/*
+* To test reliability block diagrams
+*/
+
+block Test
+	GroundStationSubSystem GS;
+//	SatelliteSubSystem Sat;
+
+end

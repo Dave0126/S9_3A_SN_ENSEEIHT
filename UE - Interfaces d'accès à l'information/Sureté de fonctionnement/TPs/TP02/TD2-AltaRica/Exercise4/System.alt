@@ -1,0 +1,62 @@
+/*
+* Phased mission system:
+* Satellite Communication System
+*
+*/
+block System
+	// Radar subsystems
+	
+	// Relay satellite subsystems 
+	
+	Boolean vfWorking (reset = false);
+
+	// Phases modeling
+	block PhaseController
+		Integer vsPhase (init = 1);
+		// parameters
+		// ...
+		// events 
+		// ...
+		transition	
+		//...
+	end
+
+	// Subsystem used during the 1st phase
+	block Phase1
+		// ...
+		Boolean vfWorking ( reset = false );
+		assertion
+		//...
+	end
+
+	// Subsystem used during the 2nd phase
+	block Phase2
+		// ...
+		Boolean vfWorking ( reset = false );
+		assertion
+		// ...
+	end
+
+	// Subsystem used during the 3rd phase
+	block Phase3
+		// ...
+		Boolean vfWorking( reset = false );
+		assertion
+		// ...
+	end
+
+	// Subsystem used during the 4th phase
+	block Phase4
+		// ...
+		Boolean vfWorking( reset = false );
+		assertion
+		// ...
+	end
+
+	assertion
+		// vfWorking := ...;
+
+	// Observer oFailed
+	//observer Boolean oFailed = ...;
+end
+
