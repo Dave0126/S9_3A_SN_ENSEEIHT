@@ -1,0 +1,824 @@
+# TP3 - SPARQL
+
+- <u>***Author***</u> : Guohao DAI (L1)
+- <u>***Date***</u> : November 27, 2022
+
+## 2 DBpedia
+
+### 2.1 Vérifier et corriger les requêtes du site Sparcluedo, partie DBpedia
+
+#### Example 1
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?uri ?string 
+WHERE {
+        res:Bill_Clinton dbo:child ?child .
+        ?child dbp:spouse ?uri .
+        ?uri rdfs:label ?string .
+		FILTER(lang(?string)='en') .
+}
+```
+
+Result:
+
+| uri                                        | string                |
+| ------------------------------------------ | --------------------- |
+| http://dbpedia.org/resource/Marc_Mezvinsky | `"Marc Mezvinsky"@en` |
+
+
+
+#### Example 2
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri ?string 
+WHERE {       
+        res:Brooklyn_Bridge dbo:crosses ?uri . 
+        OPTIONAL { ?uri rdfs:label ?string. FILTER (lang(?string) = 'en') }
+}
+```
+
+Result:
+
+| uri                                    | string            |
+| -------------------------------------- | ----------------- |
+| http://dbpedia.org/resource/East_River | `"East River"@en` |
+
+
+
+#### Example 3
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?uri ?string WHERE
+{ 
+        res:Abraham_Lincoln dbp:deathPlace ?uri .
+        OPTIONAL { ?uri rdfs:label ?string. FILTER (lang(?string) = 'en') }
+}
+```
+
+Result:
+
+| uri                           | string |
+| ----------------------------- | ------ |
+| `"Washington, D.C., U.S."@en` |        |
+
+
+
+### 2.2 Quelle taille fait Claudia Schiffer ?
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Quelle taille fait Claudia Schiffer
+
+SELECT ?number WHERE {
+	res:Claudia_Schiffer dbo:height ?number .
+}
+```
+
+Result:
+
+| number |
+| ------ |
+| `1.8`  |
+
+
+
+### 2.3 Quels sont les états frontaliers de l’Illinois ?
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Quels sont les  ́etats frontaliers de l’Illinois ?
+# il existe une property de Illinois qui donne une r ́eponse tr`es rapide
+
+SELECT DISTINCT ?states ?stateName WHERE {
+	res:Illinois dbp:borderingstates ?states .
+	OPTIONAL {
+		?states rdfs:label ?stateName .
+		FILTER(lang(?stateName)='en')
+		}
+}
+```
+
+Result:
+
+| states                                | stateName        |
+| ------------------------------------- | ---------------- |
+| http://dbpedia.org/resource/Kentucky  | `"Kentucky"@en`  |
+| http://dbpedia.org/resource/Iowa      | `"Iowa"@en`      |
+| http://dbpedia.org/resource/Missouri  | `"Missouri"@en`  |
+| http://dbpedia.org/resource/Wisconsin | `"Wisconsin"@en` |
+| http://dbpedia.org/resource/Indiana   | `"Indiana"@en`   |
+
+
+
+### 2.4 Quelles sont les capitales de tous les pays d’Afrique ?
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbc: <http://dbpedia.org/resource/Category:>
+
+# Quelles sont les capitales de tous les pays d’Afrique ?
+# 	Plusieurs relations permettent de dire qu’un pays est en Afirque, 
+# 	soit en utilisant le lien dbo:wikiPageWikiLink 
+# 	soit en utilisation la ressource dbc:Countries_in_Africa
+
+SELECT DISTINCT ?capital ?cityName WHERE {
+	?country dbo:wikiPageWikiLink dbc:Countries_in_Africa.
+	?country dbo:capital ?capital .
+	OPTIONAL {
+		?capital rdfs:label ?cityName .
+		FILTER(lang(?cityName)='en')
+		}
+}
+```
+
+Result:
+
+| capital                                          | cityName                    |
+| ------------------------------------------------ | --------------------------- |
+| http://dbpedia.org/resource/Victoria,_Seychelles | `"Victoria, Seychelles"@en` |
+| http://dbpedia.org/resource/Djibouti_(city)      | `"Djibouti (city)"@en`      |
+| http://dbpedia.org/resource/Algiers              | `"Algiers"@en`              |
+| http://dbpedia.org/resource/Asmara               | `"Asmara"@en`               |
+| http://dbpedia.org/resource/Freetown             | `"Freetown"@en`             |
+| http://dbpedia.org/resource/Gaborone             | `"Gaborone"@en`             |
+| http://dbpedia.org/resource/Harare               | `"Harare"@en`               |
+| http://dbpedia.org/resource/Hargeisa             | `"Hargeisa"@en`             |
+| http://dbpedia.org/resource/São_Tomé             | `"São Tomé"@en`             |
+| http://dbpedia.org/resource/Antananarivo         | `"Antananarivo"@en`         |
+| http://dbpedia.org/resource/Gitega               | `"Gitega"@en`               |
+| http://dbpedia.org/resource/Maputo               | `"Maputo"@en`               |
+| http://dbpedia.org/resource/Maseru               | `"Maseru"@en`               |
+| http://dbpedia.org/resource/Port_Louis           | `"Port Louis"@en`           |
+| http://dbpedia.org/resource/Porto-Novo           | `"Porto-Novo"@en`           |
+| http://dbpedia.org/resource/Praia                | `"Praia"@en`                |
+| http://dbpedia.org/resource/Pretoria             | `"Pretoria"@en`             |
+| http://dbpedia.org/resource/Brazzaville          | `"Brazzaville"@en`          |
+| http://dbpedia.org/resource/Khartoum             | `"Khartoum"@en`             |
+| http://dbpedia.org/resource/Kigali               | `"Kigali"@en`               |
+| http://dbpedia.org/resource/Mbabane              | `"Mbabane"@en`              |
+| http://dbpedia.org/resource/Nouakchott           | `"Nouakchott"@en`           |
+| http://dbpedia.org/resource/Ciudad_de_la_Paz     | `"Ciudad de la Paz"@en`     |
+| http://dbpedia.org/resource/Conakry              | `"Conakry"@en`              |
+| http://dbpedia.org/resource/Juba                 | `"Juba"@en`                 |
+| http://dbpedia.org/resource/Bamako               | `"Bamako"@en`               |
+| http://dbpedia.org/resource/Bangui               | `"Bangui"@en`               |
+| http://dbpedia.org/resource/Banjul               | `"Banjul"@en`               |
+| http://dbpedia.org/resource/Mogadishu            | `"Mogadishu"@en`            |
+| http://dbpedia.org/resource/Monrovia             | `"Monrovia"@en`             |
+| http://dbpedia.org/resource/Moroni,_Comoros      | `"Moroni, Comoros"@en`      |
+| http://dbpedia.org/resource/N'Djamena            | `"N'Djamena"@en`            |
+| http://dbpedia.org/resource/Nairobi              | `"Nairobi"@en`              |
+| http://dbpedia.org/resource/Tripoli              | `"Tripoli"@en`              |
+| http://dbpedia.org/resource/Tunis                | `"Tunis"@en`                |
+| http://dbpedia.org/resource/Abidjan              | `"Abidjan"@en`              |
+| http://dbpedia.org/resource/Abuja                | `"Abuja"@en`                |
+| http://dbpedia.org/resource/Accra                | `"Accra"@en`                |
+| http://dbpedia.org/resource/Addis_Ababa          | `"Addis Ababa"@en`          |
+| http://dbpedia.org/resource/Buea                 | `"Buea"@en`                 |
+| http://dbpedia.org/resource/Bujumbura            | `"Bujumbura"@en`            |
+| http://dbpedia.org/resource/Cairo                | `"Cairo"@en`                |
+| http://dbpedia.org/resource/Cape_Town            | `"Cape Town"@en`            |
+| http://dbpedia.org/resource/Laayoune             | `"Laayoune"@en`             |
+| http://dbpedia.org/resource/Dodoma               | `"Dodoma"@en`               |
+| http://dbpedia.org/resource/Dakar                | `"Dakar"@en`                |
+| http://dbpedia.org/resource/Madrid               | `"Madrid"@en`               |
+| http://dbpedia.org/resource/Malabo               | `"Malabo"@en`               |
+| http://dbpedia.org/resource/Libreville           | `"Libreville"@en`           |
+| http://dbpedia.org/resource/Lilongwe             | `"Lilongwe"@en`             |
+| http://dbpedia.org/resource/Niamey               | `"Niamey"@en`               |
+| http://dbpedia.org/resource/Rabat                | `"Rabat"@en`                |
+| http://dbpedia.org/resource/Tifariti             | `"Tifariti"@en`             |
+| http://dbpedia.org/resource/Windhoek             | `"Windhoek"@en`             |
+| http://dbpedia.org/resource/Yamoussoukro         | `"Yamoussoukro"@en`         |
+| http://dbpedia.org/resource/Yaoundé              | `"Yaoundé"@en`              |
+| http://dbpedia.org/resource/Kampala              | `"Kampala"@en`              |
+| http://dbpedia.org/resource/Lobamba              | `"Lobamba"@en`              |
+| http://dbpedia.org/resource/Lomé                 | `"Lomé"@en`                 |
+| http://dbpedia.org/resource/Luanda               | `"Luanda"@en`               |
+| http://dbpedia.org/resource/Lusaka               | `"Lusaka"@en`               |
+| http://dbpedia.org/resource/Ouagadougou          | `"Ouagadougou"@en`          |
+| http://dbpedia.org/resource/Bissau               | `"Bissau"@en`               |
+| http://dbpedia.org/resource/Bloemfontein         | `"Bloemfontein"@en`         |
+| http://dbpedia.org/resource/Kinshasa             | `"Kinshasa"@en`             |
+
+
+
+### 2.5 Dans quel pays le Nil prend il sa source ?
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# In which country does the Nile originate?
+# 	More ways to express the source (eg exdbp:source1Location or dbp:source or ...), 
+#	and the same property is sometimes used for linking the Nile to a country,
+#	or sometimes the Nile to a country label...
+#	Attention, dbp:source sometimes refers to a region whose countries are subdivisions...
+#	Attention, some countries do not have a label, put it OPTIONAL
+
+SELECT DISTINCT ?country ?countryName WHERE {
+	res:Nile dbp:source2Location ?country .
+	?country dbo:countryCode ?code. 
+	OPTIONAL {
+		?country rdfs:label ?countryName .
+		FILTER(lang(?countryName)='en')
+	}
+}
+```
+
+Result:
+
+| country                              | countryName     |
+| ------------------------------------ | --------------- |
+| http://dbpedia.org/resource/Ethiopia | `"Ethiopia"@en` |
+
+
+
+### 2.6 Quelles sont les villes de France de plus de 100000 habitants ?
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Which cities in France have more than 100,000 inhabitants?
+# 	several ways to express that a city is in France (by the page template
+#	dbp:wikiPageUsesTemplate or by the rel dbo:country) 
+#	and to represent France (dbr:France or yago:France)
+
+SELECT DISTINCT  ?cities ?cityName ?population WHERE {
+	?cities dbo:country res:France.
+	?cities dbp:urbanPop ?population 
+	FILTER(?population >= 100000)
+	OPTIONAL {
+		?cities rdfs:label ?cityName .
+		FILTER(lang(?cityName)='en')
+	}
+}
+```
+
+Result:
+
+| cities                                       | cityName                | population |
+| -------------------------------------------- | ----------------------- | ---------- |
+| http://dbpedia.org/resource/Avignon          | `"Avignon"@en`          | `458828`   |
+| http://dbpedia.org/resource/Besançon         | `"Besançon"@en`         | `139807`   |
+| http://dbpedia.org/resource/Saint-Nazaire    | `"Saint-Nazaire"@en`    | `186760`   |
+| http://dbpedia.org/resource/Angers           | `"Angers"@en`           | `242613`   |
+| http://dbpedia.org/resource/Annecy           | `"Annecy"@en`           | `177622`   |
+| http://dbpedia.org/resource/Marseille        | `"Marseille"@en`        | `1614501`  |
+| http://dbpedia.org/resource/Pointe-à-Pitre   | `"Pointe-à-Pitre"@en`   | `250952`   |
+| http://dbpedia.org/resource/Bordeaux         | `"Bordeaux"@en`         | `986879`   |
+| http://dbpedia.org/resource/Rennes           | `"Rennes"@en`           | `359934`   |
+| http://dbpedia.org/resource/Nouméa           | `"Nouméa"@en`           | `182341`   |
+| http://dbpedia.org/resource/Clermont-Ferrand | `"Clermont-Ferrand"@en` | `272551`   |
+| http://dbpedia.org/resource/Montpellier      | `"Montpellier"@en`      | `449187`   |
+| http://dbpedia.org/resource/Mulhouse         | `"Mulhouse"@en`         | `246692`   |
+| http://dbpedia.org/resource/Nantes           | `"Nantes"@en`           | `655187`   |
+| http://dbpedia.org/resource/Toulouse         | `"Toulouse"@en`         | `1035280`  |
+| http://dbpedia.org/resource/Tours            | `"Tours"@en`            | `359992`   |
+| http://dbpedia.org/resource/Caen             | `"Caen"@en`             | `205708`   |
+| http://dbpedia.org/resource/Cayenne          | `"Cayenne"@en`          | `125309`   |
+| http://dbpedia.org/resource/Chambéry         | `"Chambéry"@en`         | `191924`   |
+| http://dbpedia.org/resource/Strasbourg       | `"Strasbourg"@en`       | `473638`   |
+| http://dbpedia.org/resource/Le_Havre         | `"Le Havre"@en`         | `234945`   |
+| http://dbpedia.org/resource/Grenoble         | `"Grenoble"@en`         | `451096`   |
+| http://dbpedia.org/resource/Lille            | `"Lille"@en`            | `1051609`  |
+| http://dbpedia.org/resource/Limoges          | `"Limoges"@en`          | `186799`   |
+| http://dbpedia.org/resource/Nice             | `"Nice"@en`             | `944321`   |
+| http://dbpedia.org/resource/Lyon             | `"Lyon"@en`             | `1685494`  |
+| http://dbpedia.org/resource/Orléans          | `"Orléans"@en`          | `282904`   |
+| http://dbpedia.org/resource/Metz             | `"Metz"@en`             | `285930`   |
+| http://dbpedia.org/resource/Papeete          | `"Papeete"@en`          | `136771`   |
+| http://dbpedia.org/resource/Paris            | `"Paris"@en`            | `10858852` |
+| http://dbpedia.org/resource/Rouen            | `"Rouen"@en`            | `470369`   |
+
+
+
+## 3 SPARQLuedo
+
+#### 3.1 Question 1
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Combien y a-t-il de pièces dans la maison?
+#	La maison du Professeur Chabalet a pour URI http://www.lamaisondumeurtre.fr/instances#LaMaisonDuMeurtre
+
+select (count(?rooms) as ?nbRooms) where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+}
+```
+
+There are 9 rooms in Professor Chabalet's house.
+
+
+
+#### 3.2 Question 2
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Combien y a-t-il de personnes dans la maison?
+
+select (count(?person) as ?nbPerson) where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+}
+```
+
+There are 10 people in th house.
+
+
+
+#### 3.3 Question 3
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Qui est la victime?
+
+select ?victimeName where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?victime.
+	?victime :estVivant ?alive;
+		rdfs:label ?victimeName.
+    filter(?alive = "false"^^xsd:boolean)
+}
+```
+
+Patt Chance is the victime.
+
+
+
+#### 3.4 Question 4
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Donnez la liste des suspects.
+# 	Toutes les personnes encore en vie sont considérées suspectes
+
+select ?name where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+	?person :estVivant ?alive;
+         rdfs:label ?name.
+    filter(?alive = "true"^^xsd:boolean)
+}
+```
+
+Suspects are Paul Ochon, Guy Tarsaich, Gladis Tileri, Emma Niolia, Luci Nuzyte, Armand Chabalet, Vanessa Lami, Aubin Gladèche and Sophie Stulle.
+
+
+
+#### 3.5 Question 5
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Dans quelle pièce se situe la victime?
+
+select ?rooms where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?victime.
+	?victime :estVivant ?alive.
+    filter(?alive = "false"^^xsd:boolean)
+}
+```
+
+The victime stayed in Chambre.
+
+
+
+#### 3.6 Question 6
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Y a-t-il d'autres personnes dans cette pièce? (tranformez la requête précédante; utilisez ASK)
+ask where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?victime, ?otherPerson.
+	?victime :estVivant ?victimeAlive.
+    ?otherPerson :estVivant ?otherPersonAlive.
+  	filter(?victimeAlive="false"^^xsd:boolean && ?otherPersonAlive="true"^^xsd:boolean)
+}
+```
+
+
+
+#### 3.7 Question 7
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Listez les personnes dans chaque pièce.
+
+select ?rooms ?name where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+	?person :estVivant ?alive;
+         rdfs:label ?name.
+    filter(?alive = "true"^^xsd:boolean)
+}
+```
+
+- Salle a manger: Paul Ochon, Guy Tarsaich
+- Salle de bain: Gladis Tileri
+- Toilette: Emma Niolia
+- Salon: Luci Nuzyte, Armand Chabalet
+- Bureau: Vanessa Lami, Aubin Gladèche
+- Hall: Sophie Stulle
+
+
+
+#### 3.8 Question 8
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Combien y a-t-il de personnes dans chaque pièce (contenant au moins une personne)?
+
+select ?rooms (count(?person) as ?nbPerson) where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+} group by ?rooms
+```
+
+- Salle a manger: 2 persons
+- Salle de bain: 1 person
+- Toilette: 1person
+- Salon: 2 persons
+- Bureau: 2 persons
+- Hall: 1 person
+- Chambre: 1 person
+
+
+
+#### 3.9 Question 9
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Quelle(s) pièce(s) contien-nen-t au moins deux personnes?
+# (piste: utilisez la requête précédante comme sous-requête)
+
+select ?rooms ?nbPerson where {
+  	{
+		select ?rooms (count(?person) as ?nbPerson) where {
+			ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+			?rooms :pieceContientPersonne ?person.
+		} group by ?rooms
+  	}
+  	filter (?nbPerson >= 2)
+}
+```
+
+- Salon: 2 persons
+- Salle a manger: 2 persons
+- Bureau: 2 persons
+
+
+
+#### 3.10 Question 10
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Quelle(s) pièce(s) est/sont vide(s)?
+
+select ?rooms where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+  	filter not exists {?rooms :pieceContientPersonne ?person. }
+}
+```
+
+Couloir and Cuisine are empty.
+
+
+
+#### 3.11 Question 11
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Quels sont les suspects restants? (augmentez la requête listant les suspects)
+# Son nom de famille ou son prénom finit par 'e.'
+
+select ?name where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+	?person :estVivant ?alive;
+         rdfs:label ?name.
+    filter(?alive = "true"^^xsd:boolean)
+  	filter(regex(?innocentName,"e$"))
+}
+```
+
+The suspects whose names end in "e" are: Luci Nuzyte, Aubin Gladèche and  Sophie Stulle.
+
+
+
+#### 3.12 Question 12
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Le meurtrier n'est pas dans une des pièces voisines à celle où se situe la victime
+# Qui est par conséquent innoscent?
+
+select distinct ?innocentName where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?crimeScene, ?otherRooms.
+  	?crimeScene :pieceContientPersonne ?victime.
+  	?neighbor :aPourPieceVoisine ?crimeScene.
+  	?neighbor :pieceContientPersonne ?neighborSuspects.
+  	?victime :estVivant ?victimeAlive.
+  	?neighborSuspects rdfs:label ?innocentName.
+    filter(?victimeAlive = "false"^^xsd:boolean)
+  	filter(regex(?innocentName,"e$"))
+}
+```
+
+Aubin Gladèche is innoscent.
+
+
+
+#### 3.13 Question 13
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Quels sont les suspects restants? (augmentez la requête listant les suspects)
+
+select distinct ?name where {
+  {
+    ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+	?person :estVivant ?alive;
+         rdfs:label ?name.
+    filter(?alive = "true"^^xsd:boolean)
+  	filter(regex(?name,"e$"))
+  }
+  minus
+  {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?crimeScene, ?otherRooms.
+  	?crimeScene :pieceContientPersonne ?victime.
+  	?neighbor :aPourPieceVoisine ?crimeScene.
+  	?neighbor :pieceContientPersonne ?neighborSuspects.
+  	?victime :estVivant ?victimeAlive.
+  	?neighborSuspects rdfs:label ?name.
+    filter(?victimeAlive = "false"^^xsd:boolean)
+  	filter(regex(?name,"e$"))
+  }
+}
+```
+
+The remaining suspects are Luci Nuzyte and Sophie Stulle.
+
+
+
+#### 3.14 Question 14
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Combien y a-t-il d'objets dans la maison?
+
+select (count(?objects) as ?nbObjects) where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms .
+  	?rooms :pieceContientObjet ?objects.
+}
+```
+
+There are 10 objects in the house.
+
+
+
+#### 3.15 Question 15
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# L'arme du crime ne se trouve pas dans la pièce où se situe la victime
+# Quels objets ne peuvent pas être l'arme du crime?
+
+select ?objects where {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?crimeScene.
+	?crimeScene :pieceContientPersonne ?victime.
+	?victime :estVivant ?alive.
+  	?crimeScene :pieceContientObjet ?objects.
+    filter(?alive = "false"^^xsd:boolean)
+}
+```
+
+The following things cannot be used as murder weapons :
+
+"Poignard" and "Oreiller"
+
+"Nokia3310", "EauDeJavel", "Lacet", "Chandelier", "Marteau", "PicAGlace", "Revolver" and  "Livre".
+
+
+
+#### 3.16 Question 16
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Personne ne se situe dans une pièce où a été posée l'arme du crime
+# Quel objet est l'arme du crime?
+
+select ?objects where {
+  {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms .
+  	?rooms :pieceContientObjet ?objects.
+    filter not exists {?rooms :pieceContientPersonne ?person. }
+  }
+  minus
+  {
+    ins:LaMaisonDuMeurtre :maisonContientPiece ?crimeScene.
+	?crimeScene :pieceContientPersonne ?victime.
+	?victime :estVivant ?alive.
+  	?crimeScene :pieceContientObjet ?objects.
+    filter(?alive = "false"^^xsd:boolean)
+  }
+}
+```
+
+Murder weapon is "PicAGlace"
+
+
+
+#### 3.17 Question 17
+
+```
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Le meurtrier se situe dans une pièce sans objet
+# Qui est le meurtrier? (augmentez la requête listant les suspects)
+
+prefix : <http://www.lamaisondumeurtre.fr#>
+prefix ins: <http://www.lamaisondumeurtre.fr/instances#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Le meurtrier se situe dans une pièce sans objet
+# Qui est le meurtrier? (augmentez la requête listant les suspects)
+
+select distinct (?name as ?murdererName)  where {
+  {
+    ins:LaMaisonDuMeurtre :maisonContientPiece ?rooms.
+	?rooms :pieceContientPersonne ?person.
+	?person :estVivant ?alive;
+         rdfs:label ?name.
+    filter(?alive = "true"^^xsd:boolean)
+  	filter(regex(?name,"e$"))
+    filter not exists {?rooms :pieceContientObjet ?objects }
+  }
+  minus
+  {
+	ins:LaMaisonDuMeurtre :maisonContientPiece ?crimeScene, ?otherRooms.
+  	?crimeScene :pieceContientPersonne ?victime.
+  	?neighbor :aPourPieceVoisine ?crimeScene.
+  	?neighbor :pieceContientPersonne ?neighborSuspects.
+  	?victime :estVivant ?victimeAlive.
+  	?neighborSuspects rdfs:label ?name.
+    filter(?victimeAlive = "false"^^xsd:boolean)
+  	filter(regex(?name,"e$"))
+  }
+}
+```
+
+The murderer is Sophie Stulle.
