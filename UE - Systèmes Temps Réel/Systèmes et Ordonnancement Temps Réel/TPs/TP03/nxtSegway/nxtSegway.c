@@ -49,7 +49,7 @@ typedef enum {
 MODE_ENUM nxtSegway_mode= INIT_MODE;
 
 
-TASK(pendule) {
+TASK(pendulum) {
   float dt;
   int initial_time= 0;
         
@@ -105,9 +105,8 @@ TASK(pendule) {
     dt = delta_t();
     estimator(y, dt, x);
     controller(ue, xe, x, K);
-
-
-
+    nxt_motors_set_command(u);
+    
     break;
 
   default:
@@ -120,7 +119,7 @@ TASK(pendule) {
 }
 
 
-TASK(affichage) {
+TASK(display) {
   /*display informations*/
   display_clear(0);
 
@@ -133,6 +132,10 @@ TASK(affichage) {
   disp(7, " x[3] = ", (int)((x[3]) * RAD2DEG));
   
   TerminateTask();
+}
+
+TASK(backwards) {
+  ecrobot_init_sonar_sensor(PORT_SONAR);
 }
 
 ISR(isr_button_start)
