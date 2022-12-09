@@ -1,0 +1,54 @@
+#!/bin/sh
+
+set -e
+
+if [ \( ! $# -eq 1 \) -o \( -z "$1" \) ]
+then
+	echo "Usage: $0 <oil_file>"
+	echo "Adapt <oil_file> to fit the current environment."
+	exit 1
+fi
+
+# Check the existence of the specified file
+([ -f "$1" ]) || \
+	(echo "Error: required file does not exist." && exit 1)
+
+([ -w "$1" -a -r "$1" ]) || \
+	(echo "Error: file \"$1\", missing read or write permission." && exit 1)
+
+([ ! -f "_$1" ]) || \
+	(echo "Error: a backup copy of file \"$1\" is already present." && exit 1)
+
+# Check the presence of the required folders, based on environment
+([ -n "${NXT_GCC_PATH}" ]) || \
+	(echo "Error: Missing environment value NXT_GCC_PATH." && exit 1)
+
+([ -e "${NXT_GCC_PATH}" ]) || \
+	(echo "Error: NXT_GCC_PATH directory \"${NXT_GCC_PATH}\" does not exist." && exit 1)
+
+([ -n "${NXT_GCC_LIBGCC_VERSION}" ]) || \
+	(echo "Error: Missing environment value NXT_GCC_LIBGCC_VERSION." && exit 1)
+
+LIBGCC_DIR="${NXT_GCC_PATH}/lib/gcc/arm-elf/${NXT_GCC_LIBGCC_VERSION}"
+([ -d "${LIBGCC_DIR}" ]) || \
+	(echo "Error: libgcc directory \"${LIBGCC_DIR}\" does not exist." && exit 1)
+
+LIBC_DIR="${NXT_GCC_PATH}/arm-elf/lib"
+([ -d "${LIBC_DIR}" ]) || \
+	(echo "Error: libc directory \"${LIBC_DIR}\" does not exist." && exit 1)
+
+([ -n "${NXT_TRAMPOLINE_PATH}" ]) || \
+	(echo "Error: Missing environment value NXT_TRAMPOLINE_PATH." && exit 1)
+
+TRAMPOLINE="${NXT_TRAMPOLINE_PATH}"
+([ -d "${TRAMPOLINE}" ]) || \
+	(echo "Error: trampoline directory \"${TRAMPOLINE}\" does not exist." && exit 1)
+
+
+# Backup current oil file
+cp "$1" "_$1"
+
+# Replace environment relevant values by the current ones
+
+eval "sed -e 's@\(TRAMPOLINE_BASE_PATH = \).*\$@\1\"${TRAMPOLINE}\";@' \"_$1\" | \
+      sed -e 's@\(LDFLAGS = \).*-lgcc.*-lc.*\$@\1\"-L${LIBGCC_DIR} -lgcc -L${LIBC_DIR} -lc\";@'" > "$1"
