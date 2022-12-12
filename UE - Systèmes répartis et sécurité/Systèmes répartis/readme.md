@@ -1,4 +1,7 @@
+[点此跳转博客，`Lost N Found`：分布式系统与算法 - 课程笔记](https://lostnfound.top/2022/11/27/distributedAlgo/)
+
 #### Quiz
+
 Les quiz sont à faire dans la semaine qui suit la séance correspondante. Ils ne seront pas rouverts plus tard.
 Ils sont en temps illimité et à tentatives multiples.
 Prolongation coupure d'accès : les chapitres 2 et 3 sont ouverts jusqu'au 8 novembre. Le chapitre 4 est à faire avant le 25 octobre.
