@@ -50,14 +50,20 @@ CPU test {
     APPMODE std {
     };
 
+    RESOURCE mutex {
+        RESOURCEPROPERTY = STANDARD;
+    };
+
     TASK pendulum {
         PRIORITY = 2;
         AUTOSTART = FALSE;
         ACTIVATION = 1;
         SCHEDULE = FULL;
         STACKSIZE = 512;
-    }
+        RESOURCE = mutex;
+    };
     ALARM pendulum_alarm {
+        COUNTER = SystemCounter;
         ACTION = ACTIVATETASK {
             TASK = pendulum;
         };
@@ -74,8 +80,10 @@ CPU test {
         ACTIVATION = 1;
         SCHEDULE = FULL;
         STACKSIZE = 512;
-    }
+    };
+
     ALARM display_alarm {
+        COUNTER = SystemCounter;
         ACTION = ACTIVATETASK {
             TASK = display;
         };
@@ -92,8 +100,11 @@ CPU test {
         ACTIVATION = 1;
         SCHEDULE = FULL;
         STACKSIZE = 512;
-    }
+        RESOURCE = mutex;
+    };
+
     ALARM backwards_alarm {
+        COUNTER = SystemCounter;
         ACTION = ACTIVATETASK {
             TASK = backwards;
         };

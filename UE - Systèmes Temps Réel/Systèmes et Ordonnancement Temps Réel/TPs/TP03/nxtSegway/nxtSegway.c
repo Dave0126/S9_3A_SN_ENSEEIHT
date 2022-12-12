@@ -23,6 +23,8 @@ DeclareAlarm(pendulum_alarm);
 DeclareAlarm(display_alarm);
 DeclareAlarm(backwards_alarm);
 
+DeclareResource(mutex);
+
 /* ------------------------------------------------------------------------- */
 /* Variables globales du système                                             */
 /* ------------------------------------------------------------------------- */
@@ -40,6 +42,12 @@ float x[4];                         /* state                                 */
 float y[2];                         /* observations                          */
 float u;                            /* command of the controller (V)         */
 float setpoint;                     /* target value for theta variable       */
+int brake;
+int distance;
+
+void estimator(float y[], float dt, float x[]);
+void controller(float ue, float xe[], float x[]);
+
 
 typedef enum {
   INIT_MODE,      /* system initialize mode */
@@ -104,8 +112,11 @@ TASK(pendulum) {
     y[1] = getGyro(gyro_offset);
     dt = delta_t();
     estimator(y, dt, x);
-    controller(ue, xe, x, K);
+    controller(ue, xe, x);
     nxt_motors_set_command(u);
+    GetResource(mutex);
+    xe[1] = (brake == 1) ? (3.14*(-0.1)) : 0.0;
+    ReleaseResource(mutex);
     
     break;
 
@@ -123,19 +134,27 @@ TASK(display) {
   /*display informations*/
   display_clear(0);
 
-  //disp(1, " PWM  = ", (int)(pwmR+pwmL)/2);
-  disp(2, " y[0] = ", (int)(y[0]*RAD2DEG));
-  disp(3, " y[1] = ", (int)(y[1]*RAD2DEG));
-  disp(4, " x[0] = ", (int)((x[0]) * RAD2DEG));
-  disp(5, " x[1] = ", (int)((x[1]) * RAD2DEG));
-  disp(6, " x[2] = ", (int)((x[2]) * RAD2DEG));
-  disp(7, " x[3] = ", (int)((x[3]) * RAD2DEG));
+  // disp(1, " PWM  = ", (int)(pwmR+pwmL)/2);
+  // disp(2, " y[0] = ", (int)(y[0]*RAD2DEG));
+  // disp(3, " y[1] = ", (int)(y[1]*RAD2DEG));
+  // disp(4, " x[0] = ", (int)((x[0]) * RAD2DEG));
+  // disp(5, " x[1] = ", (int)((x[1]) * RAD2DEG));
+  // disp(6, " x[2] = ", (int)((x[2]) * RAD2DEG));
+  // disp(7, " x[3] = ", (int)((x[3]) * RAD2DEG));
+  disp(1, " D = ", (int)(distance * RAD2DEG));
   
   TerminateTask();
 }
 
 TASK(backwards) {
   ecrobot_init_sonar_sensor(PORT_SONAR);
+
+  distance = ecrobot_get_sonar_sensor(PORT_SONAR);
+  GetResource(mutex);
+  brake = (distance < 1000) ? 1 : 0;
+  ReleaseResource(mutex);
+
+  TerminateTask();
 }
 
 ISR(isr_button_start)
@@ -170,9 +189,10 @@ void estimator(float y[], float dt, float x[]){
   x[0] = theta;
 }
 
-float K[4] = {0.6700, 19.9053, 1.0747, 1.9614};
-void controller(float ue, float xe[], float x[], float K[]) {
+
+void controller(float ue, float xe[], float x[]) {
+  float K[4] = {0.6700, 19.9053, 1.0747, 1.9614};
   for (int i=0; i<4; i++) {
-    u += ue + (K[i] * (x[i] - xe[i]))
+    u += ue + (K[i] * (x[i] - xe[i]));
   }
 }
