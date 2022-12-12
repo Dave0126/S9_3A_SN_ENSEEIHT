@@ -59,8 +59,8 @@ int main(int argc, char* argv[]) {
 
     // Use a collective communication in order to gather on ALL the nodes the
     // part of the local vector into the global vector
-
-    // ... TODO
+    // ... 
+    MPI_Allgather(&v_local, b, MPI_DOUBLE, &v_global, b, MPI_DOUBLE, MPI_COMM_WORLD);
 
     // the node 2 checks if the global vector is correct
     if(my_rank == 2) {

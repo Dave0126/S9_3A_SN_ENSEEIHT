@@ -1,5 +1,5 @@
 #!/bin/bash
-SIMGRID=/opt/simgrid
+SIMGRID=/source/workspace/
 
 export PATH=${SIMGRID}/bin:${PATH}
 
