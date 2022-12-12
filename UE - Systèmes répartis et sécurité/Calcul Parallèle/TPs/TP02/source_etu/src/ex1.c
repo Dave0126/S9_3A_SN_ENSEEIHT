@@ -57,11 +57,11 @@ void p2p_transmit_B(int p, int q, Matrix *B, int l, int j) {
         }
       }
     } else if (my_col == Blj->col /* B[l,j] is stored on my column */) {
-        Blj->c = malloc(b*b*sizeof(float));
-        if (my_col == Blj->col) {
-        /* MPI_Recv B[l,j] */
-        MPI_Recv(Blj->c, b * b, MPI_FLOAT, Blj->owner, tag, MPI_COMM_WORLD, &status);
-      }
-      /* end TODO */
+      Blj->c = malloc(b*b*sizeof(float));
+      if (my_col == Blj->col) {
+      /* MPI_Recv B[l,j] */
+      MPI_Recv(Blj->c, b * b, MPI_FLOAT, Blj->owner, tag, MPI_COMM_WORLD, &status);
     }
+    /* end TODO */
+	}
 	}
