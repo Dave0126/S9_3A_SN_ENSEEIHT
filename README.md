@@ -13,11 +13,11 @@
 |-|Projet - IoT Arduino |30%|Projet|已组队||
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06|✅|
 |-|Sécurité et informatique légale|34%|Examen|01/16||
-|-|Calcul Parallèle|33%|BE|12/13||
+|-|Calcul Parallèle|33%|BE|12/13|✅|
 |UE - Raffinement et méthodes formelles|Spécifications formelles|40%|Examen|01/31||
 |-|Développement formel de systèmes|36%|Examen|01/17||
 |-|Projet - Développement formel de systèmes|24%|Projet|12/02||
-|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/13||
+|UE - Interfaces d'accès à l'information|Web sémantique|17.5%|Examen|12/13|✅|
 |-|TPs - Web sémantique|7.5%|TPs||✅|
 |-|Recherche d'information|25%|Examen|02/02||
 |-|IHM (Interface Homme Machine)|25%|Examen|02/03||
@@ -28,8 +28,8 @@
 ### Schedule of JURY
 |内容|日期|是否结束|
 |:----:|:----:|:----:|
-|S9: Session 1||<ul><li>- [ ] </li></ul>|
-|S9: Session 2||<ul><li>- [ ] </li></ul>|
+|S9: Session 1|||
+|S9: Session 2|||
 
 ### INTRODUCTION
 这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2022~2023学年-第1学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-3eme-annee-subprogram-n7i53-181.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
