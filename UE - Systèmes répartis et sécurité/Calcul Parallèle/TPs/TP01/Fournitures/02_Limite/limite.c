@@ -46,15 +46,15 @@ int main(int argc, char* argv[]) {
 
   if(my_rank == 0){
     // node 0 sends its buffer buffer_send of size data_size to node 1
-    // ...
+    MPI_Send(buffer_send, data_size, MPI_INT, 1, tag, MPI_COMM_WORLD);
     // node 0 receives in its buffer buffer_recv data from node 1
-    // ...
+    MPI_Recv(buffer_recv, data_size, MPI_INT, 1, tag, MPI_COMM_WORLD, &status);
     printf("MPI process %d received value %d from MPI process %d.\n", my_rank, buffer_recv[0], 1);
   } else {
     // node 1 sends its buffer buffer_send of size data_size to node 0
-    // ...
+    MPI_Send(buffer_send, data_size, MPI_INT, 0,tag, MPI_COMM_WORLD);
     // node 1 receives in its buffer buffer_recv data from node 0
-    // ...
+    MPI_Recv(buffer_recv, data_size, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
     printf("MPI process %d received value %d from MPI process %d.\n", my_rank, buffer_recv[0], 0);
   }
 
@@ -65,3 +65,10 @@ int main(int argc, char* argv[]) {
 
   return EXIT_SUCCESS;
 }
+
+/**
+ * (a) MPI_Send() 即可以是一种同步的发送，也可以是缓存的发送。
+ *    当消息较小时，将使用缓冲区（异步）；当接收的数据大于MPI所维护的缓冲区时，会变成同步的方式。
+ * (b) 当接收的数据大于MPI所维护的缓冲区而成同步的方式时，发送会等待接收完成后才完成，在smpi中会提示死锁的出现
+ * (c) 
+*/

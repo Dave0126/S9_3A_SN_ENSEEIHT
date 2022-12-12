@@ -1,0 +1,64 @@
+#!/bin/sh
+
+set -e
+
+if [ ! $# -eq 1 ]
+then
+	echo "Usage: $0 <project_name>"
+	echo "Creates <project_name> folder and source files."
+	exit 1
+fi
+
+# Check the non existence of the project.
+PROJECT_NAME=`basename $1`
+PROJECT_DIRE=`dirname $1`
+#PROJECT_NAME=`echo "$1" | sed -e 's#/#_#g'`
+([ ! -e ${PROJECT_DIRE}/${PROJECT_NAME} ]) || \
+	(echo "Warning: project \"${PROJECT_NAME}\" already exists." && exit 1)
+
+
+# Check the existence of the required template files.
+NXT_TEMPLATE_SOURCE_FILE="${NXT_TEMPLATE_PATH}/c.m4"
+NXT_TEMPLATE_OIL_FILE="${NXT_TEMPLATE_PATH}/oil.m4"
+
+([ -e "${NXT_TEMPLATE_SOURCE_FILE}" ] && [ -e "${NXT_TEMPLATE_OIL_FILE}" ]) || 
+	(echo "Error: required template files not found."  && exit 1)
+
+# Create the project directory.
+(mkdir -p "${PROJECT_DIRE}/${PROJECT_NAME}") || \
+	(echo "Error: could not create \"${PROJECT_DIRE}/${PROJECT_NAME}\" directory." && exit 1)
+cd ${PROJECT_DIRE}
+
+
+# Create the project files.
+process_template() {
+	[ $# -eq 2 ]
+
+	INPUT_FILE="$1"
+	OUTPUT_FILE="$2"
+
+	[ -e "${INPUT_FILE}" ]
+
+	# Collect information for template generation.
+	AUTHOR=`whoami`
+	CURDIR=`pwd`
+	DATE=`date`
+
+	m4 -D_FILENAME_="${PROJECT_NAME}" \
+	   -D_URL_="${CURDIR}/${PROJECT_NAME}" \
+	   -D_DATE_="${DATE}" \
+	   -D_AUTHOR_="${AUTHOR}" \
+	   -D_TRAMPOLINE_="${NXT_TRAMPOLINE_PATH}" \
+	   -D_LIBGCC_DIR_="${NXT_GCC_PATH}/lib/gcc/arm-elf/${NXT_GCC_LIBGCC_VERSION}/" \
+	   -D_LIBC_DIR_="${NXT_GCC_PATH}/arm-elf/lib" \
+	   "${INPUT_FILE}" \
+	   > ${OUTPUT_FILE}
+
+	[ -e ${OUTPUT_FILE} ] || \
+		(echo "Error: file \"${OUTPUT_FILE}\" could not be created." && exit 1)
+}
+
+process_template "${NXT_TEMPLATE_SOURCE_FILE}" "${PROJECT_NAME}/${PROJECT_NAME}.c"
+process_template "${NXT_TEMPLATE_OIL_FILE}"    "${PROJECT_NAME}/${PROJECT_NAME}.oil"
+
+echo "Notice: project \"${PROJECT_NAME}\" has been created."

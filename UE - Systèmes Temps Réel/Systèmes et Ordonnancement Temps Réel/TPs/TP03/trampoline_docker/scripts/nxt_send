@@ -1,0 +1,53 @@
+#!/bin/sh
+
+#set -e
+
+if [ ! $# -ge 1 ]
+then
+	echo "Usage: $0 [FILE]..."
+	echo "Send files to a nxt brick connected through usb."
+	exit 1
+fi
+
+fail()
+{
+	echo "Error: $1"
+	exit 1
+}
+
+# Find the t2n binary
+T2N_BINARY=`which t2n 2>/dev/null || true`
+
+# Test if the nexttool binary is executable.
+([ -n "${T2N_BINARY}" ] && [ -x "${T2N_BINARY}" ]) || \
+	fail "t2n binary cannot be executed."
+
+
+# Send all specified files to the brick through usb.
+while [ $# -gt 0 ]; do
+	# Check the existence of the file.
+	([ -e $1 ] && [ -r $1 ]) || \
+		fail "file \"$1\" cannot be read."
+
+	# Test if at least one nxt brick has been found.
+	#([ -n "`${NEXTTOOL_BINARY} -listbricks`" ]) ||  \
+	#	fail "No nxt brick found."
+
+	# Compute file name on brick (includes the fifteen char limit on name lengths, excluding extension)
+	filename=`basename $1 | sed -e 's/^\([[:alnum:][:punct:]]\{1,15\}\).*\.\([[:alnum:]]\{1,\}\)$/\1.\2/'`
+
+	# Remove file from brick (if it exists).
+	echo "Removing file ${filename} ..."
+	${T2N_BINARY} -y -rm "${filename}"
+
+	# Send the file on the brick.
+	(${T2N} -y -put "$1") || \
+		fail "could not send file \"$1\" on brick."
+
+	# Check if the file is on the brick.
+	([ -n "`${T2N_BINARY} -y -ls| grep ${filename}`" ]) || \
+		fail "file \"$(basename $1)\" not found on brick."
+	
+	shift 1
+done
+

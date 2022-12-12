@@ -28,7 +28,7 @@ int main( int argc, char *argv[] ) {
   for(int i = 0; i < local_data_size; i++) {
     local_x[i] = (float) (local_data_size*my_rank + i);
     local_y[i] = (float) (local_data_size*my_rank + i);
-    //printf("[MPI process %d] value[%d]: %f\n", my_rank, i, local_x[i]);
+    // printf("[MPI process %d] value[%d]: %f\n", my_rank, i, local_x[i]);
   }
 
   local_dot  = dot(local_x, local_y, local_data_size);
@@ -43,18 +43,23 @@ int main( int argc, char *argv[] ) {
   // Use a collective communication to compute the global dot product 
   // in such a way that the node 0 gets this value
   // ...
+  MPI_Reduce(&local_dot, &global_dot1, 1, MPI_FLOAT, MPI_SUM, 0, MPI_COMM_WORLD);
 
   // Node 0 displays the global value and the reference (sum of first integer ^ 2)
   if(my_rank == 0) {
-    printf("[MPI process %d] *Two-step collective operation* global dot product: %f == %f\n", my_rank, global_dot1, reference);
+    printf("Two-step operation : [MPI process %d] *Two-step collective operation* global dot product: %f == %f\n", my_rank, global_dot1, reference);
   }
 
   // Step 2
   // Use a collective communication to broadcast the global value on each node
   // ...
+  MPI_Bcast(&global_dot1, 1, MPI_FLOAT, 0, MPI_COMM_WORLD);
 
   // A node i (i different from 0) displays the global value
   // ...
+  if(my_rank != 0) {
+    printf("Two-step operation : [MPI process %d] global value: %f\n", my_rank, global_dot1);
+  }
   
   /* One-step operation */
 
@@ -63,9 +68,12 @@ int main( int argc, char *argv[] ) {
   // Step 3
   // Now use one single collective communication to perfom both step 1 and 2
   // ...
+  MPI_Allreduce(&local_dot, &global_dot2, 1, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);
+
 
   // Another node displays the global value
   // ...
+  printf("One-step operation : [MPI process %d] global value: %f\n", my_rank, global_dot2);
 
   MPI_Finalize();
 
