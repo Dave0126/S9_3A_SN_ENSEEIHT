@@ -1,0 +1,95 @@
+
+/*
+ * =============================================================================
+ *  COPYRIGHT (c) 2015-2019 - IRT SystemX
+ *  COPYRIGHT (c) 2015-2019 - AltaRica Association
+ * =============================================================================
+ *
+ *  Project: "OARPlatform"
+ *
+ * =============================================================================
+ *  All rights reserved.
+ * =============================================================================
+ */
+ 
+OpenAltaRica Tools: new features and bug-fixes
+
+========================================================
+AltaRicaWizard
+<v1.0.0>
+- Added to the release 1.0.0 of the OARPlatform.
+<v1.1.0>
+- Update with new version of Qt.
+
+========================================================
+AltaRica 3.0 Compiler
+<v1.0.0>
+- Refactoring the grammar in order to be compliant with the AltaRica 3.0 specification (see http://openaltarica.fr/docs/AltaRica%203.0%20Language%20Specification.pdf).
+- Add warning and error messages at runtime.
+- Possibility to define elements every where.
+- Refactoring options and printer at launch.
+- Add option to print the structure of the AR3Model.
+- Fix bug with observer references with a bad order.
+- Fix memory leaks
+<v1.1.0>
+- Refactoring the grammar in order to be compliant with the AltaRica 3.0 specification
+- Refactoring warning and error messages
+- Refactoring help menu and parameters at launch
+- Refactoring the GTS internal data model
+- Fix bug with some builtin operators
+- Fix memory leaks
+
+========================================================
+GTSTypeChecker
+<v1.0.0>
+- Added to the release 1.0.0 of the OARPlatform.
+<v1.1.0>
+- Refactoring the GTS internal data model
+
+========================================================
+GTS Stepwise Simulator
+<v1.0.0>
+- Refactoring commands.
+- Suppress difference between Immediate and timed fireable transitions.
+- Print attributes of delays.
+- Support output file.
+- Bug fix for delay evaluation with Dirac(0).
+- Print echo command.
+- Fix different bugs.
+- Refactoring options and printer at launch.
+- Command to save the GTS model or elements at the current state.
+- Fix memory leaks
+<v1.1.0>
+- Refactoring help menu and parameters at launch
+- Fix bug with some builtin operators
+- Fix memory leaks
+
+========================================================
+GTS Fault Tree Compiler
+<v1.0.0>
+- Bug fix with synchronized event ending by 'skip'.
+- Refactoring global code to compile and produce the fault trees.
+- Take into account top event from a boolean observer.
+- Implement a new algorithm to suppress some 'not' events.
+- Fix memory leaks
+<v1.1.0>
+- Refactoring help menu and parameters at launch
+- New algorithm to compile the fault tree
+- Fix memory leaks
+
+========================================================
+GTS Stochastic Simulator
+<v1.0.0>
+- Added to the release 1.0.0 of the OARPlatform.
+<v1.1.0>
+- Refactoring help menu and parameters at launch
+- New printer for results
+- Fix bug with some builtin operators
+- Fix memory leaks
+
+========================================================
+XFTA
+<v1.0.0>
+- Directly added with the release 1.0.0 of the OARPlatform.
+<v1.1.0>
+- None

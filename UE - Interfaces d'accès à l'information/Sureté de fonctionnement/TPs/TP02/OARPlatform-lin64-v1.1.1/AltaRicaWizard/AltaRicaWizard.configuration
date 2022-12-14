@@ -1,0 +1,112 @@
+<!DOCTYPE AltaRicaWizard>
+<configuration>
+	<variable name="help.path" value="./help/AltaRicaWizardHelp.qhc" />
+
+	<variable name="editor.tabStop" value="4" />
+
+	<variable name="editor.main.font.family" value="Courier" />
+	<variable name="editor.main.font.size" value="10" />
+	<variable name="editor.main.font.weight" value="normal" />
+	<variable name="editor.main.font.style" value="normal" />
+	<variable name="editor.main.background.color" value="white" />
+	<variable name="editor.main.foreground.color" value="black" />
+
+	<variable name="editor.main.highlight.color" value="yellow" />
+	<variable name="editor.main.highlightedText.color" value="black" />
+
+	<variable name="editor.AltaRica.keyword.font.family" value="Courier" />
+	<variable name="editor.AltaRica.keyword.font.size" value="10" />
+	<variable name="editor.AltaRica.keyword.font.weight" value="bold" />
+	<variable name="editor.AltaRica.keyword.font.style" value="normal" />
+	<variable name="editor.AltaRica.keyword.background.color" value="white" />
+	<variable name="editor.AltaRica.keyword.foreground.color" value="blue" />
+	<variable name="editor.AltaRica.keyword.underline.style" value="none" />
+	<variable name="editor.AltaRica.keyword.underline.color" value="black" />
+
+	<variable name="editor.AltaRica.number.font.family" value="Courier" />
+	<variable name="editor.AltaRica.number.font.size" value="10" />
+	<variable name="editor.AltaRica.number.font.weight" value="normal" />
+	<variable name="editor.AltaRica.number.font.style" value="normal" />
+	<variable name="editor.AltaRica.number.background.color" value="white" />
+	<variable name="editor.AltaRica.number.foreground.color" value="darkMagenta" />
+	<variable name="editor.AltaRica.number.underline.style" value="none" />
+	<variable name="editor.AltaRica.number.underline.color" value="black" />
+
+	<variable name="editor.AltaRica.string.font.family" value="Courier" />
+	<variable name="editor.AltaRica.string.font.size" value="10" />
+	<variable name="editor.AltaRica.string.font.weight" value="normal" />
+	<variable name="editor.AltaRica.string.font.style" value="normal" />
+	<variable name="editor.AltaRica.string.background.color" value="white" />
+	<variable name="editor.AltaRica.string.foreground.color" value="darkYellow" />
+	<variable name="editor.AltaRica.string.underline.style" value="none" />
+	<variable name="editor.AltaRica.string.underline.color" value="black" />
+
+	<variable name="editor.AltaRica.comment.font.family" value="Courier" />
+	<variable name="editor.AltaRica.comment.font.size" value="10" />
+	<variable name="editor.AltaRica.comment.font.weight" value="normal" />
+	<variable name="editor.AltaRica.comment.font.style" value="italic" />
+	<variable name="editor.AltaRica.comment.background.color" value="white" />
+	<variable name="editor.AltaRica.comment.foreground.color" value="darkGreen" />
+	<variable name="editor.AltaRica.comment.underline.style" value="none" />
+	<variable name="editor.AltaRica.comment.underline.color" value="black" />
+
+	<variable name="editor.XML.tag.font.family" value="Courier" />
+	<variable name="editor.XML.tag.font.size" value="10" />
+	<variable name="editor.XML.tag.font.weight" value="normal" />
+	<variable name="editor.XML.tag.font.style" value="normal" />
+	<variable name="editor.XML.tag.background.color" value="white" />
+	<variable name="editor.XML.tag.foreground.color" value="blue" />
+	<variable name="editor.XML.tag.underline.style" value="none" />
+	<variable name="editor.XML.tag.underline.color" value="black" />
+
+	<variable name="editor.XML.attributeName.font.family" value="Courier" />
+	<variable name="editor.XML.attributeName.font.size" value="10" />
+	<variable name="editor.XML.attributeName.font.weight" value="normal" />
+	<variable name="editor.XML.attributeName.font.style" value="normal" />
+	<variable name="editor.XML.attributeName.background.color" value="white" />
+	<variable name="editor.XML.attributeName.foreground.color" value="red" />
+	<variable name="editor.XML.attributeName.underline.style" value="none" />
+	<variable name="editor.XML.attributeName.underline.color" value="black" />
+
+	<variable name="editor.XML.attributeValue.font.family" value="Courier" />
+	<variable name="editor.XML.attributeValue.font.size" value="10" />
+	<variable name="editor.XML.attributeValue.font.weight" value="normal" />
+	<variable name="editor.XML.attributeValue.font.style" value="normal" />
+	<variable name="editor.XML.attributeValue.background.color" value="white" />
+	<variable name="editor.XML.attributeValue.foreground.color" value="indigo" />
+	<variable name="editor.XML.attributeValue.underline.style" value="none" />
+	<variable name="editor.XML.attributeValue.underline.color" value="black" />
+
+	<variable name="editor.XML.entity.font.family" value="Courier" />
+	<variable name="editor.XML.entity.font.size" value="10" />
+	<variable name="editor.XML.entity.font.weight" value="normal" />
+	<variable name="editor.XML.entity.font.style" value="italic" />
+	<variable name="editor.XML.entity.background.color" value="white" />
+	<variable name="editor.XML.entity.foreground.color" value="gray" />
+	<variable name="editor.XML.entity.underline.style" value="none" />
+	<variable name="editor.XML.entity.underline.color" value="black" />
+
+	<variable name="editor.XML.comment.font.family" value="Courier" />
+	<variable name="editor.XML.comment.font.size" value="10" />
+	<variable name="editor.XML.comment.font.weight" value="normal" />
+	<variable name="editor.XML.comment.font.style" value="italic" />
+	<variable name="editor.XML.comment.background.color" value="white" />
+	<variable name="editor.XML.comment.foreground.color" value="darkGreen" />
+	<variable name="editor.XML.comment.underline.style" value="none" />
+	<variable name="editor.XML.comment.underline.color" value="black" />
+
+	<variable name="tools.directory" value="../Tools" />
+	<variable name="tools.flattener.path" value="AR3Tools/ar3c" />
+	<variable name="tools.typechecker.path" value="AR3Tools/gtstck" />
+	<variable name="tools.stepper.path" value="AR3Tools/gtsstp" />
+	<variable name="tools.stepper.changeHighlithingColor" value="lavender" />
+	<variable name="tools.compilerToFaultTree.path" value="AR3Tools/gtsftc" />
+	<variable name="tools.compilerToStochasticSimulator.path" value="AR3Tools/gtsstocmp.sh" />
+	<variable name="tools.stochasticSimulator.shrinkFactor" value="1000" />
+	<variable name="tools.stochasticSimulator.missionTime" value="8760" />
+	<variable name="tools.stochasticSimulator.numberOfRuns" value="10000" />
+	<variable name="tools.stochasticSimulator.maximumNumberOfEventFiringsPerHistory" value="1000000" />
+	<variable name="tools.stochasticSimulator.randomNumberGeneratorSeed" value="12345" />
+	<variable name="tools.stochasticSimulator.resultFile" value="results.csv" />
+	<variable name="tools.xfta.path" value="OPSATools/xftar" />
+</configuration>
