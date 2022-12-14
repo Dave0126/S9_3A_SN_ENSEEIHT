@@ -10,7 +10,7 @@
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01/06||
 |-|Langage pour le temps réel|30%|Examen|01/30||
-|-|Projet - IoT Arduino |30%|Projet|已组队||
+|-|Projet - IoT Arduino |30%|Projet|01/23||
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06|✅|
 |-|Sécurité et informatique légale|34%|Examen|01/16||
 |-|Calcul Parallèle|33%|BE|12/13|✅|
@@ -21,7 +21,7 @@
 |-|TPs - Web sémantique|7.5%|TPs||✅|
 |-|Recherche d'information|25%|Examen|02/02||
 |-|IHM (Interface Homme Machine)|25%|Examen|02/03||
-|-|Sureté de fonctionnement|25%|TPs|TP02 (进行中)||
+|-|Sureté de fonctionnement|25%|TPs|12/15||
 |UE - à choix|Infrastructure for Cloud|50%|Examen|11/21|✅|
 |-|Infrastructure for Big Data|50%|Examen|01/30||
 
