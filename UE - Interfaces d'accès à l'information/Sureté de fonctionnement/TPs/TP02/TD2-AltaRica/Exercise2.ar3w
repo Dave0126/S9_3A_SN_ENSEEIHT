@@ -1,12 +1,13 @@
 <!DOCTYPE AltaRicaWizard>
 <project name="Exercise2">
     <folder name="Components">
-        <file name="BasicComponents.alt" path="Components/BasicComponents.alt"/>
-        <file name="GroundStation-RBD.alt" path="Components/GroundStation-RBD.alt"/>
-        <file name="Satellite-RBD.alt" path="Components/Satellite-RBD.alt"/>
+        <file path="Components/BasicComponents.alt" name="BasicComponents.alt"/>
+        <file path="Components/GroundStation-RBD.alt" name="GroundStation-RBD.alt"/>
+        <file path="Components/Satellite-RBD.alt" name="Satellite-RBD.alt"/>
     </folder>
     <folder name="Exercise2">
-        <file name="Exercise2.alt" path="Exercise2/Exercise2.alt"/>
+        <file path="Exercise2/Exercise2.alt" name="Exercise2.alt"/>
     </folder>
-    <file name="Test.gts" path="Test.gts"/>
+    <file path="Exercise2.opsa" name="Exercise2.opsa"/>
+    <file path="Test.gts" name="Test.gts"/>
 </project>

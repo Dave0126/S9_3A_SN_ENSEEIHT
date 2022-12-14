@@ -5,8 +5,11 @@
 */
 block System
 	// Radar subsystems
+	GroundStationSubSystem GS1, GS2;
+	SatelliteSubSystem Sat; 
 	
-	// Relay satellite subsystems 
+	// Relay satellite subsystems
+	SatelliteSubSystem SatRelay1, SatRelay2;
 	
 	Boolean vfWorking (reset = false);
 
@@ -17,46 +20,78 @@ block System
 		// ...
 		// events 
 		// ...
+		event D1 (delay = Dirac(2));
+		event D2 (delay = Dirac(1));
+		event D3 (delay = Dirac(2));
+		event D4 (delay = Dirac(7));
+
 		transition	
 		//...
+			D1: Phase1.vfWorking -> Phase2.vfWorking := true;
+			D2: Phase2.vfWorking -> Phase3.vfWorking
+			D3: Phase3.vfWorking -> Phase4.vfWorking
+			D4: Phase4.vfWorking -> Phase1.vfWorking
 	end
 
 	// Subsystem used during the 1st phase
 	block Phase1
+		embeds main.GS1 as GS1;
+		embeds main.Sat as Sat;
 		// ...
 		Boolean vfWorking ( reset = false );
 		assertion
 		//...
+			vfWorking := GS1.vfOutput and Sat.vfOutput;
 	end
 
 	// Subsystem used during the 2nd phase
 	block Phase2
 		// ...
+		embeds main.GS1 as GS1;
+		embeds main.GS2 as GS2;
+		embeds main.Sat as Sat;
 		Boolean vfWorking ( reset = false );
 		assertion
-		// ...
+		// ...vsWorking
+			vfWorking := (GS1.vfOutput or GS2.vfOutput) and Sat.vfOutput;
 	end
 
 	// Subsystem used during the 3rd phase
 	block Phase3
 		// ...
+		embeds main.GS2 as GS2;
+		embeds main.Sat as Sat;
 		Boolean vfWorking( reset = false );
 		assertion
 		// ...
+			vfWorking := Sat.vfOutput and GS2.vfOutput;
 	end
 
 	// Subsystem used during the 4th phase
 	block Phase4
 		// ...
+		embeds main.GS1 as GS1;
+		embeds main.GS2 as GS2;
+		embeds main.SatRelay1 as SatRelay1;
+		embeds main.SatRelay2 as SatRelay2;
+		embeds main.Sat as Sat;
 		Boolean vfWorking( reset = false );
 		assertion
 		// ...
+			vfWorking := (GS1.vfOutput or GS2.vfOutput) and Sat.vfOutput and (SatRelay1.vfOutput or SatRelay2.vfOutput);
 	end
 
 	assertion
 		// vfWorking := ...;
+		vfWorking := if (PhaseController.vsPhase == 1) then Phase1.vfWorking
+					else if (PhaseController.vsPhase == 2) then Phase2.vfWorking
+					else if (PhaseController.vsPhase == 3) then Phase3.vfWorking
+					else if (PhaseController.vsPhase == 4) then Phase4.vfWorking
+					else false;
 
 	// Observer oFailed
 	//observer Boolean oFailed = ...;
+	observer Boolean oFailed = not vfWorking;
+
 end
 

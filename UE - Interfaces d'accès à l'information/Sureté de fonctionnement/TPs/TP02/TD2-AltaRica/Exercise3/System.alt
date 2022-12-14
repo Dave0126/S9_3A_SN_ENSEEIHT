@@ -15,7 +15,7 @@ block System
 
 	// Phases modeling
 	block PhaseController
-		Integer vsPhase (init = 2);
+		Integer vsPhase (init = 4);
 	end
 
 	// Subsystem used during the 1st phase
