@@ -21,7 +21,7 @@
 |-|TPs - Web sémantique|7.5%|TPs||✅|
 |-|Recherche d'information|25%|Examen|02/02||
 |-|IHM (Interface Homme Machine)|25%|Examen|02/03||
-|-|Sureté de fonctionnement|25%|TPs|12/15||
+|-|Sureté de fonctionnement|25%|TPs|12/15|✅|
 |UE - à choix|Infrastructure for Cloud|50%|Examen|11/21|✅|
 |-|Infrastructure for Big Data|50%|Examen|01/30||
 
