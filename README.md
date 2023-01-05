@@ -8,7 +8,7 @@
 ### 考试占比
 |UE|科目|占比|考核形式|日期|是否结束|
 |:----:|:----:|:----:|:----:|:----:|:----:|
-|UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01/06||
+|UE - Systèmes Temps Réel|Systèmes et Ordonnancement Temps Réel|40%|Examen|01/06|✅|
 |-|Langage pour le temps réel|30%|Examen|01/30||
 |-|Projet - IoT Arduino |30%|Projet|01/23||
 |UE - Systèmes répartis et sécurité|Systèmes et algorithmes répartis|33%|Examen|12/06|✅|
