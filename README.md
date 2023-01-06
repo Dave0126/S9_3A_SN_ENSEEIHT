@@ -12,7 +12,7 @@
 |-|Langage pour le temps réel|30%|Examen|01/30||
 |-|Projet - IoT Arduino |30%|Projet|01/23||
 |UE - Systèmes répartis et sécurité|[Systèmes et algorithmes répartis](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20r%C3%A9partis%20et%20s%C3%A9curit%C3%A9/Syst%C3%A8mes%20r%C3%A9partis)|33%|Examen|12/06|✅|
-|-|Sécurité et informatique légale|34%|Examen|01/16||
+|-|[Sécurité et informatique légale](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20r%C3%A9partis%20et%20s%C3%A9curit%C3%A9/S%C3%A9curit%C3%A9%20et%20informatique%20l%C3%A9gale)|34%|Examen|01/16||
 |-|[Calcul Parallèle](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20r%C3%A9partis%20et%20s%C3%A9curit%C3%A9/Calcul%20Parall%C3%A8le)|33%|BE|12/13|✅|
 |UE - Raffinement et méthodes formelles|[Spécifications formelles](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Raffinement%20et%20m%C3%A9thodes%20formelles/Sp%C3%A9cifications%20Formelles)|40%|Examen|01/31||
 |-|[Développement formel de systèmes](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Raffinement%20et%20m%C3%A9thodes%20formelles/D%C3%A9veloppement%20formel%20de%20syst%C3%A8mes)|36%|Examen|01/17||
