@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="CARTONS" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="ARRIVEES" org.eventb.core.type="ℙ(ARRIVEES)"/>
+        <org.eventb.core.poIdentifier name="DEPARTS" org.eventb.core.type="ℙ(DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="TRANSITIONS" org.eventb.core.type="ℙ(TRANSITIONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="LigneSortie" org.eventb.core.type="ℙ(CARTONS×DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="Entrée" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="LigneEntrée" org.eventb.core.type="ℙ(CARTONS×ARRIVEES)"/>
+        <org.eventb.core.poIdentifier name="Transitions" org.eventb.core.type="ℙ(TRANSITIONS)"/>
+        <org.eventb.core.poIdentifier name="Sortie" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="départ_de_t" org.eventb.core.type="ℙ(TRANSITIONS×DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="Transit" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="carton_de_t" org.eventb.core.type="ℙ(TRANSITIONS×CARTONS)"/>
+        <org.eventb.core.poPredicate name="carton_de_u" org.eventb.core.predicate="Entrée⊆CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.invariant#+"/>
+        <org.eventb.core.poPredicate name="carton_de_v" org.eventb.core.predicate="Sortie⊆CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poPredicate name="carton_de_w" org.eventb.core.predicate="Entrée∩Sortie=(∅ ⦂ ℙ(CARTONS))" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poPredicate name="carton_de_x" org.eventb.core.predicate="Entrée∩Sortie∩Transit=(∅ ⦂ ℙ(CARTONS))" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.invariant#\/"/>
+        <org.eventb.core.poPredicate name="carton_de_y" org.eventb.core.predicate="Transit⊆CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poPredicate name="carton_de_z" org.eventb.core.predicate="Entrée≠(∅ ⦂ ℙ(CARTONS))∨Sortie≠(∅ ⦂ ℙ(CARTONS))∨Transit≠(∅ ⦂ ℙ(CARTONS))" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.invariant#1"/>
+        <org.eventb.core.poPredicate name="carton_de_{" org.eventb.core.predicate="Entrée=(∅ ⦂ ℙ(CARTONS))∧Transit=(∅ ⦂ ℙ(CARTONS))⇒Sortie=CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.invariant#2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="LigneEntrée'∈CARTONS ⇸ ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/|org.eventb.core.action#+"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="LigneEntrée'∈CARTONS ⇸ ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CARTONS×DEPARTS))∈CARTONS ⇸ DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(TRANSITIONS×CARTONS))∈(∅ ⦂ ℙ(TRANSITIONS)) ↣ CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(TRANSITIONS×DEPARTS))∈(∅ ⦂ ℙ(TRANSITIONS)) → DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="LigneEntrée'∈CARTONS ⇸ ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/|org.eventb.core.action#+"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(LigneEntrée')=CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(∅ ⦂ ℙ(CARTONS×DEPARTS))=(∅ ⦂ ℙ(CARTONS))" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀carton⦂CARTONS·carton∈(∅ ⦂ ℙ(CARTONS))∧carton∈ran(∅ ⦂ ℙ(TRANSITIONS×CARTONS))∧dom(∅ ⦂ ℙ(TRANSITIONS×CARTONS))=(∅ ⦂ ℙ(TRANSITIONS))" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act5/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CARTONS ⇸ ARRIVEES≠(∅ ⦂ ℙ(ℙ(CARTONS×ARRIVEES)))" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/|org.eventb.core.action#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#\/|org.eventb.core.action#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_A"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAutomate_ctx_A" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="départ_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="LigneEntrée'" org.eventb.core.type="ℙ(CARTONS×ARRIVEES)"/>
+        <org.eventb.core.poIdentifier name="Entrée'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="carton_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×CARTONS)"/>
+        <org.eventb.core.poIdentifier name="Sortie'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="Transit'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="Transitions'" org.eventb.core.type="ℙ(TRANSITIONS)"/>
+        <org.eventb.core.poIdentifier name="LigneSortie'" org.eventb.core.type="ℙ(CARTONS×DEPARTS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAutomate_ctx_A" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTIDENTAutomate_ctx_A" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="Prendre/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{c} ⩤ LigneEntrée∈CARTONS ⇸ ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="carton_de_t{t ↦ c}∈Transitions∪{t} ↣ CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="départ_de_t{t ↦ d}∈Transitions∪{t} → DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom({c} ⩤ LigneEntrée)=Entrée ∖ {c}" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀carton⦂CARTONS·carton∈Transit∪{c}∧carton∈ran(carton_de_t{t ↦ c})∧dom(carton_de_t{t ↦ c})=Transitions∪{t}" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈Entrée" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#.|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#.|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Prendre/grd3/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_B"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∉Transit" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#,|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Prendre\/grd3\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAutomate_ctx_B" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="départ_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="LigneEntrée'" org.eventb.core.type="ℙ(CARTONS×ARRIVEES)"/>
+        <org.eventb.core.poIdentifier name="Entrée'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="carton_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×CARTONS)"/>
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CARTONS"/>
+        <org.eventb.core.poIdentifier name="d" org.eventb.core.type="DEPARTS"/>
+        <org.eventb.core.poIdentifier name="Transit'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="ARRIVEES"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="TRANSITIONS"/>
+        <org.eventb.core.poIdentifier name="Transitions'" org.eventb.core.type="ℙ(TRANSITIONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAutomate_ctx_B" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTIDENTAutomate_ctx_B" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(LigneEntrée)" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="a∈ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="c ↦ a∈LigneEntrée" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="d∈DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="t∈TRANSITIONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="t∉Transitions" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#0|org.eventb.core.guard#internal9"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Poser/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(carton_de_t)∧carton_de_t∈TRANSITIONS ⇸ CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(départ_de_t)∧départ_de_t∈TRANSITIONS ⇸ DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="LigneSortie∪{c ↦ d}∈CARTONS ⇸ DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{t} ⩤ carton_de_t∈Transitions ∖ {t} ↣ CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{t} ⩤ départ_de_t∈Transitions ∖ {t} → DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(LigneSortie∪{c ↦ d})=Sortie∪{c}" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀carton⦂CARTONS·carton∈Transit ∖ {c}∧carton∈ran({t} ⩤ carton_de_t)∧dom({t} ⩤ carton_de_t)=Transitions ∖ {t}" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∉Sortie" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/grd3/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∉Entrée" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#\/|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_0.bum|org.eventb.core.machineFile#Automate_0|org.eventb.core.event#\/|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/grd3\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Poser/grd4/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTALLHYPAutomate_ctx_C"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈Transit" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AutomateLogistique/Automate_1.bum|org.eventb.core.machineFile#Automate_1|org.eventb.core.event#-|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poSequent#Poser\/grd4\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAutomate_ctx_C" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="départ_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×DEPARTS)"/>
+        <org.eventb.core.poIdentifier name="carton_de_t'" org.eventb.core.type="ℙ(TRANSITIONS×CARTONS)"/>
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CARTONS"/>
+        <org.eventb.core.poIdentifier name="Sortie'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="d" org.eventb.core.type="DEPARTS"/>
+        <org.eventb.core.poIdentifier name="Transit'" org.eventb.core.type="ℙ(CARTONS)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="ARRIVEES"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="TRANSITIONS"/>
+        <org.eventb.core.poIdentifier name="Transitions'" org.eventb.core.type="ℙ(TRANSITIONS)"/>
+        <org.eventb.core.poIdentifier name="LigneSortie'" org.eventb.core.type="ℙ(CARTONS×DEPARTS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAutomate_ctx_C(" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTIDENTAutomate_ctx_C" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAutomate_ctx_C)" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="carton_de_t(t)=c" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAutomate_ctx_C" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#EVTHYPAutomate_ctx_C)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="départ_de_t(t)=d" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="d∈DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="t∈Transitions" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="a∈ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#2"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="c∉dom(LigneSortie)" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#3"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="t∈TRANSITIONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="t∈dom(carton_de_t)" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="t∈dom(départ_de_t)" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.event#1|org.eventb.core.guard#6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AutomateLogistique/Automate_2.bpo|org.eventb.core.poFile#Automate_2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="LigneEntrée∈CARTONS ⇸ ARRIVEES" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="LigneSortie∈CARTONS ⇸ DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Transitions⊆TRANSITIONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="carton_de_t∈Transitions ↣ CARTONS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="départ_de_t∈Transitions → DEPARTS" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="dom(LigneEntrée)=Entrée" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#="/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="dom(LigneSortie)=Sortie" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀carton⦂CARTONS·carton∈Transit∧carton∈ran(carton_de_t)∧dom(carton_de_t)=Transitions" org.eventb.core.source="/AutomateLogistique/Automate_2.bum|org.eventb.core.machineFile#Automate_2|org.eventb.core.invariant#?"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

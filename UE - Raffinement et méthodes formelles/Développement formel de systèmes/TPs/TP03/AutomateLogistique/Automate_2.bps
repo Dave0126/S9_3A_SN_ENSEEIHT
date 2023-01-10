@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/act5/FIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/grd2/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Prendre/grd3/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/grd4/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/grd2/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/grd3/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Poser/grd4/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>
