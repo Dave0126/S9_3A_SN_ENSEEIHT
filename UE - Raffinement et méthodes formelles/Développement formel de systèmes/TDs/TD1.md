@@ -32,7 +32,7 @@ $$
 	& \qquad inv3:D\_e\_C \in Students \to DIPLOMAS, \quad (STUDENT \nrightarrow DIPLOMAS)\\
 	& \qquad inv4:D\_e\_C \in Old\_Students \to DIPLOMAS \\
 	& \qquad inv5:Students \cap Old\_Students = \emptyset \\
-	& \qquad inv6:\forall d·d \in DIPLOMAS \Rightarrow cord(D\_e\_C ^{-1}) [\{d\}] \le 30\\
+	& \qquad inv6:\forall d·d \in DIPLOMAS \Rightarrow cord(D\_e\_C ^{-1} [\{d\}]) \le 30\\
 	&\text{INITIACISATION} \triangleq \\
 	& \qquad act1:Students, Old\_Students := \empty, \empty \\
 	& \qquad act2:D\_e\_C, D\_o := \empty, \empty \\
