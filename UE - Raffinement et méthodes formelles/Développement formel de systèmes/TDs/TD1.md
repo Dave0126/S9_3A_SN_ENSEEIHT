@@ -14,11 +14,13 @@ AXIOMS
 ```
 
 $$
-partition(S, A_0, A_1,...,A_n)\equiv 
-\left\{\begin{align} 
+partition(S, A_0, A_1,...,A_n) \equiv 
+\left \{
+\begin{align} 
 	& \bigcup_{c=0}^{n}A_i=S\\ 
 	&\forall i,j \quad i\ne j \Rightarrow A_i \cap A_j
-\end{align}\right\}
+\end{align}
+\right \}
 $$
 
 $$
