@@ -21,6 +21,11 @@ partition(S, A_0, A_1,...,A_n) \equiv
 \end{Bmatrix}
 $$
 
+
+
+***Machine***
+
+
 $$
 \begin{align}
 	&\text{MACHINE} \quad Ecole \\
@@ -83,7 +88,11 @@ $$
 \end{align}
 $$
 
+
+
 ***POs***
+
+
 $$
 \begin{align}
 	& \text{PO:}\\
