@@ -83,6 +83,7 @@ $$
 \end{align}
 $$
 
+***POs***
 $$
 \begin{align}
 	& \text{PO:}\\
@@ -105,7 +106,6 @@ $$
 	& \qquad \qquad = \{s\} \cup (L \cup M \cup D)\\
 \end{align}
 $$
-
 
 
 
@@ -151,6 +151,8 @@ $$
 $$
 
 ***MACHINE***
+
+
 $$
 \begin{align}
 	&\text{MACHINE} \quad Thermo \\
