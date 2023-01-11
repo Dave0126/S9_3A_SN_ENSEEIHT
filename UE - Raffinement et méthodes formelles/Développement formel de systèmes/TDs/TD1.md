@@ -134,9 +134,9 @@ $$
 	&\qquad T_{min}, T_{max}, T_{def}\\
 	&\text{AXIONS}\\
 	&\qquad axm1: partition(\text{ETAT},\{On\}, \{Off\}) \\
-	&\qquad axm2: T_{min} \in \Z \\
-	&\qquad axm3: T_{max} \in \Z \\
-	&\qquad axm4: T_{def} \in \Z \\
+	&\qquad axm2: T_{min} \in \mathbb{Z} \\
+	&\qquad axm3: T_{max} \in \mathbb{Z} \\
+	&\qquad axm4: T_{def} \in \mathbb{Z} \\
 	&\qquad axm5\quad(ENV1): T_{min} \le T_{max} \\
 	&\qquad axm6\quad(ENV2): T_{min} \le T_{def} \le T_{max} \\
 \end{align}
@@ -155,30 +155,25 @@ $$
 	&\qquad \text{INITIALISATION} \triangleq \\
 	&\qquad \qquad act1: \quad etat := Off \\
 	&\qquad \qquad act2: \quad temp :\in \Z \\
-	
 	&\qquad \text{Allumer} = \\
 	&\qquad \qquad WHEN \quad etat = Off \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad act1: \quad etat := On \\
 	&\qquad \qquad \qquad act2: \quad temp := T_{def} \\
-	
 	&\qquad \text{Eteindre} = \\
 	&\qquad \qquad WHEN \quad etat = On \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad act1: \quad etat := Off \\
-	
 	&\qquad \text{Reset} = \\
 	&\qquad \qquad WHEN \quad etat = On \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad act1: \quad temp := T_{def} \\
-	
 	&\qquad \text{Augmenter} = \\
 	&\qquad \qquad WHEN \quad etat = On \\
 	&\qquad \qquad \qquad temp < T_{max} \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad temp:1 \\
 	&\qquad \qquad \qquad temp' > temp \and temp' \le T_{max} \\
-	
 	&\qquad \text{Augmenter}^* = \\
 	&\qquad \qquad ANY \quad t \\
 	&\qquad \qquad WHEN\\
@@ -189,7 +184,6 @@ $$
 	&\qquad \qquad \qquad act1: \quad temp' := temp + t \\
 	&\qquad \qquad WITH \\
 	&\qquad \qquad \qquad t = 1 \\
-	
 	&\qquad \text{Diminuer} = \\
 	&\qquad \qquad WHEN \quad etat = On \\
 	&\qquad \qquad \qquad temp > T_{min} \\
