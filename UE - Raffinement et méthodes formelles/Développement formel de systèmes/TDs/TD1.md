@@ -36,18 +36,19 @@ $$
 	& \qquad inv2:OldStudents \subseteq STUDENT \\
 	& \qquad inv3:DeC \in Students \to DIPLOMAS, \quad (STUDENT \nrightarrow DIPLOMAS)\\
 	& \qquad inv4:DeC \in OldStudents \to DIPLOMAS \\
-	& \qquad inv5:Students \cap OldStudents = \emptyset \\
+	& \qquad inv5:Students \cap OldStudents = \varnothing \\
 	& \qquad inv6:\forall d·d \in DIPLOMAS \Rightarrow cord(DeC ^{-1} [\{d\}]) \le 30\\
 	&\text{INITIACISATION} \triangleq \\
-	& \qquad act1:Students, OldStudents := \empty, \empty \\
-	& \qquad act2:DeC, Do := \empty, \empty \\
+	& \qquad act1:Students, OldStudents := \varnothing, \varnothing \\
+	& \qquad act2:DeC, Do := \varnothing, \varnothing \\
 	&\text{Inscreption} \triangleq \\
 	& \qquad \text{ANY} \quad s,d\\
 	& \qquad \text{WHEN} \\
 	& \qquad \quad grd1:s\notin Students \\
 	& \qquad \quad grd2:s\notin OldStudents \\
-	&	\qquad \quad grd3:d \in DIPLOMAS \\
-	&	\qquad \quad grd4:cord(DeC^{-1} [\{d\} < 30])\\
+	& \qquad \quad grd3:s\in STUDENTS \\
+	&	\qquad \quad grd4:d \in DIPLOMAS \\
+	&	\qquad \quad grd5:cord(DeC^{-1} [\{d\} < 30])\\
 	& \qquad \text{THEN} \\
 	&	\qquad \quad act1: Students := Students \cup \{s\} \\
 	&	\qquad \quad act2: DeC := DeC \cup \{s \mapsto d\} \\
