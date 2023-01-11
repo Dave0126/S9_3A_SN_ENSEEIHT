@@ -86,7 +86,7 @@ $$
 $$
 \begin{align}
 	& \text{PO:}\\
-	& \text{ INV:}\\
+	& \text{INV:}\\
 	& \qquad \qquad D\_e\_C^{-1} [\{L\}] = \{License\} \and \\
 	& \qquad \qquad L' = L \cup \{s\} \and \\
 	& \qquad \qquad D\_e\_C'= D\_e\_C \cup \{s \mapsto d\}  \and \\
