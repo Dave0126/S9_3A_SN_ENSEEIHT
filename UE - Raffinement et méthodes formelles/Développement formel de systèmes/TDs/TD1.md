@@ -80,6 +80,11 @@ $$
 	& \qquad \qquad grd2:\quad s \in Old\_Student\\
 	& \qquad \qquad grd3:\quad cord(L) < 30\\
 	& \qquad \text{THEN} \quad act1: L:=L\cup\{s\}\\
+\end{align}
+$$
+
+$$
+\begin{align}
 	& \text{PO:}\\
 	& \qquad \text{\_INV:}\\
 	& \qquad \qquad D\_e\_C^{-1} [\{L\}] = \{License\} \and \\
@@ -105,6 +110,8 @@ $$
 
 
 
+
+
 ## Exercise 2
 
 > Analyse:
@@ -123,6 +130,7 @@ $$
 >   - $T_{min} \le T_{max}$
 >   - $T_{min} \le T_{def} \le T_{max}$
 
+***CONTEXT***:
 
 $$
 \begin{align}
@@ -142,6 +150,7 @@ $$
 \end{align}
 $$
 
+***MACHINE***
 $$
 \begin{align}
 	&\text{MACHINE} \quad Thermo \\
@@ -149,12 +158,12 @@ $$
 	&\qquad etat, temp\\
 	&\text{INVARIANTS}\\
 	&\qquad inv1: \quad etat \in \text{ETAT} \\
-	&\qquad inv2: \quad temp \in \Z \\
-	&\qquad inv3: \quad etat = On \quad \Rightarrow T_{min} \le temp \and temp \le T_{max}\\
+	&\qquad inv2: \quad temp \in \mathbb{Z} \\
+	&\qquad inv3: \quad etat = On \quad \Rightarrow T_{min} \le temp \land temp \le T_{max}\\
 	&\text{EVENTS}\\
 	&\qquad \text{INITIALISATION} \triangleq \\
 	&\qquad \qquad act1: \quad etat := Off \\
-	&\qquad \qquad act2: \quad temp :\in \Z \\
+	&\qquad \qquad act2: \quad temp :\in \mathbb{Z} \\
 	&\qquad \text{Allumer} = \\
 	&\qquad \qquad WHEN \quad etat = Off \\
 	&\qquad \qquad THEN \\
@@ -173,11 +182,11 @@ $$
 	&\qquad \qquad \qquad temp < T_{max} \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad temp:1 \\
-	&\qquad \qquad \qquad temp' > temp \and temp' \le T_{max} \\
+	&\qquad \qquad \qquad temp' > temp \land temp' \le T_{max} \\
 	&\qquad \text{Augmenter}^* = \\
 	&\qquad \qquad ANY \quad t \\
 	&\qquad \qquad WHEN\\
-	&\qquad \qquad \qquad t\in \Z , t > 0\\
+	&\qquad \qquad \qquad t\in \mathbb{Z} , t > 0\\
 	&\qquad \qquad \qquad temp < T_{max}, etat = On \\
 	&\qquad \qquad \qquad temp+t \le T_{max}\\
 	&\qquad \qquad THEN \\
@@ -189,7 +198,7 @@ $$
 	&\qquad \qquad \qquad temp > T_{min} \\
 	&\qquad \qquad THEN \\
 	&\qquad \qquad \qquad temp:1 \\
-	&\qquad \qquad \qquad temp' < temp \and temp' \ge T_{min} \\
+	&\qquad \qquad \qquad temp' < temp \land temp' \ge T_{min} \\
 \end{align}
 $$
 
