@@ -29,44 +29,44 @@ $$
 $$
 \begin{align}
 	&\text{MACHINE} \quad Ecole \\
-	&\text{SEES} \quad Student\_Def \\
-	&\text{VARIABLES} \quad Student, Old\_Students, DeC, D\_o\\
+	&\text{SEES} \quad StudentDef \\
+	&\text{VARIABLES} \quad Student, OldStudents, DeC, Do\\
 	&\text{INVARIANT}\\
 	& \qquad inv1:Students \subseteq STUDENT :\mathbb{P}(STUDENT) \\
-	& \qquad inv2:Old\_Students \subseteq STUDENT \\
+	& \qquad inv2:OldStudents \subseteq STUDENT \\
 	& \qquad inv3:DeC \in Students \to DIPLOMAS, \quad (STUDENT \nrightarrow DIPLOMAS)\\
-	& \qquad inv4:DeC \in Old\_Students \to DIPLOMAS \\
-	& \qquad inv5:Students \cap Old\_Students = \emptyset \\
+	& \qquad inv4:DeC \in OldStudents \to DIPLOMAS \\
+	& \qquad inv5:Students \cap OldStudents = \emptyset \\
 	& \qquad inv6:\forall d·d \in DIPLOMAS \Rightarrow cord(DeC ^{-1} [\{d\}]) \le 30\\
 	&\text{INITIACISATION} \triangleq \\
-	& \qquad act1:Students, Old\_Students := \empty, \empty \\
-	& \qquad act2:DeC, D\_o := \empty, \empty \\
+	& \qquad act1:Students, OldStudents := \empty, \empty \\
+	& \qquad act2:DeC, Do := \empty, \empty \\
 	&\text{Inscreption} \triangleq \\
 	& \qquad \text{ANY} \quad s,d\\
 	& \qquad \text{WHEN} \\
 	& \qquad \quad grd1:s\notin Students \\
-	& \qquad \quad grd2:s\notin Old\_Students \\
+	& \qquad \quad grd2:s\notin OldStudents \\
 	&	\qquad \quad grd3:d \in DIPLOMAS \\
 	&	\qquad \quad grd4:cord(DeC^{-1} [\{d\} < 30])\\
 	& \qquad \text{THEN} \\
 	&	\qquad \quad act1: Students := Students \cup \{s\} \\
 	&	\qquad \quad act2: DeC := DeC \cup \{s \mapsto d\} \\
-	&\text{Obtenir\_Diplome} = \\
+	&\text{ObtenirDiplome} = \\
 	& \qquad \text{ANY} \quad s\\
 	& \qquad \text{WHEN} \\
 	&	\qquad \quad (grd1:s\in STUDENTS)\\
 	&	\qquad \quad grd2:s\in Students\\
 	& \qquad \text{THEN} \\
 	&	\qquad \quad act1: Students := Students \setminus \{s\} \\
-	&	\qquad \quad act2: Old\_Students := Old\_Students \cup \{s\} \\
+	&	\qquad \quad act2: OldStudents := OldStudents \cup \{s\} \\
 	&	\qquad \quad act3: DeC := \{s\} \lhd DeC \\
-	&	\qquad \quad act4: D\_o := D\_o \cup \{s \mapsto DeC(s) \}\\
+	&	\qquad \quad act4: Do := Do \cup \{s \mapsto DeC(s) \}\\
 	& \qquad dom(A \lhd B) = dom(B) \setminus A \\
 	& \text{Abs}\\
 	& \qquad DeC \\
 	& \qquad Students \\
-	& \qquad D\_o \\
-	& \qquad Old\_Students \\
+	& \qquad Do \\
+	& \qquad OldStudents \\
 	& \text{Conc}\\
 	& \qquad L,M,D \subset STUDENTS \\
 	& \qquad  partition(STUDENTS,L,M,D) \\
@@ -82,7 +82,7 @@ $$
 	& \qquad \text{WITH} \quad d:d=\text{License} )temoin\\
 	& \qquad \text{WHERE}\\
 	& \qquad \qquad grd1:\quad s \notin L \cup M \cup D\\
-	& \qquad \qquad grd2:\quad s \in Old\_Student\\
+	& \qquad \qquad grd2:\quad s \in OldStudent\\
 	& \qquad \qquad grd3:\quad cord(L) < 30\\
 	& \qquad \text{THEN} \quad act1: L:=L\cup\{s\}\\
 \end{align}
