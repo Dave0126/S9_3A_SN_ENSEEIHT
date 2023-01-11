@@ -98,10 +98,10 @@ $$
 \begin{align}
 	& \text{PO:}\\
 	& \text{INV:}\\
-	& \qquad \qquad DeC^{-1} [\{L\}] = \{License\} \and \\
-	& \qquad \qquad L' = L \cup \{s\} \and \\
-	& \qquad \qquad DeC'= DeC \cup \{s \mapsto d\}  \and \\
-	& \qquad \qquad Stud' = Stud \cup \{s\} \and d=License\\
+	& \qquad \qquad DeC^{-1} [\{L\}] = \{License\} \land \\
+	& \qquad \qquad L' = L \cup \{s\} \land \\
+	& \qquad \qquad DeC'= DeC \cup \{s \mapsto d\}  \land \\
+	& \qquad \qquad Stud' = Stud \cup \{s\} \land d=License\\
 	& \qquad \qquad \Rightarrow DeC^{-1} [\{L\}] = \{License\}\\
 	& \text{GRD:}\\
 	& \qquad s \notin L \cup M \cup D \cap S \notin OldStud\\
