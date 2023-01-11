@@ -80,7 +80,6 @@ $$
 	& \qquad \qquad grd2:\quad s \in Old\_Student\\
 	& \qquad \qquad grd3:\quad cord(L) < 30\\
 	& \qquad \text{THEN} \quad act1: L:=L\cup\{s\}\\
-	
 	& \text{PO:}\\
 	& \qquad \text{\_INV:}\\
 	& \qquad \qquad D\_e\_C^{-1} [\{L\}] = \{License\} \and \\
@@ -88,20 +87,17 @@ $$
 	& \qquad \qquad D\_e\_C'= D\_e\_C \cup \{s \mapsto d\}  \and \\
 	& \qquad \qquad Stud' = Stud \cup \{s\} \and d=License\\
 	& \qquad \qquad \Rightarrow D\_e\_C^{-1} [\{L\}] = \{License\}\\
-	
 	& \text{GRD:}\\
 	& \qquad s \notin L \cup M \cup D \cap S \notin Old\_Stud\\
 	& \qquad \cap cord(L) < 30 \cap d=License \cap (invariants) \Rightarrow \\
 	& \qquad s \notin Stud \cap s \notin Old\_Stud \cap \\
 	& \qquad cord(D\_e\_C^{-1} [\{d\}]) < 30\\
-	
 	& \text{SIM:}\\
 	& \qquad (gardes \, A) \cap (gardes \, C) \cap (invariants) \cap d=License \cap L'=L \cup \{s\}\\
 	& \qquad \Rightarrow D\_e\_C' = D\_e\_C \cup \{s\mapsto d\} \cap Stud' = Stud \cup \{s\} \\
 	& \qquad L' \cup M \cup D\\
 	& \qquad \qquad = L\cup\{s\} \cup M \cup D \\
 	& \qquad \qquad = \{s\} \cup (L \cup M \cup D)\\
-	
 \end{align}
 $$
 
