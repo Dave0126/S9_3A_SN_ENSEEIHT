@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment=" " org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.comment=" " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="connection :∈ (NODES → ∅)" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="destinationOf :∈ (MESSAGES → NODES)" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="stateOf :∈ (MESSAGES → STATES)" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.seesContext name="(" org.eventb.core.target="Context"/>
+    <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="connection ∈ (NODES → ℙ(NODES))"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="connection"/>
+    <org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CONNECT">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="node1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="node2"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="(node1 ∈ NODES) ∧ (node2 ∈ NODES)"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="connection ≔ connection  {node1 ↦ ( {node2} ∪ connection(node1) )}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="node1 ≠ node2"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="node2 ∉ connection(node1)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DISCONNECT">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="(node1 ∈ NODES) ∧ (node2 ∈ NODES)" org.eventb.core.theorem="true"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="node1"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="node2"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="node2 ∈ connection(node1)"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="connection ≔ connection  {node1 ↦ ( connection(node1) ∖ {node2} )}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="node1 ≠ node2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SEND">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="message"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="message ∈ MESSAGES"/>
+        <org.eventb.core.parameter name="+" org.eventb.core.identifier="node"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="destinationOf(message) ≠ node"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="node ∈ NODES"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="stateOf ≔ stateOf  {message ↦ SENT}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd4" org.eventb.core.predicate="stateOf(message) = IDLE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RECIEVE">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="message"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="node"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="message ∈ MESSAGES"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="node ∈ NODES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="stateOf(message) = SENT"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="stateOf ≔ stateOf  {message ↦ RECEIVED}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="1" org.eventb.core.label="inv3" org.eventb.core.predicate="destinationOf ∈ (MESSAGES → NODES)"/>
+    <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="LOSE">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="message"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="message ∈ MESSAGES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="stateOf(message) = SENT"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="stateOf ≔ stateOf  {message ↦ LOST}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="4" org.eventb.core.label="inv5" org.eventb.core.predicate="stateOf ∈ (MESSAGES → STATES)"/>
+    <org.eventb.core.variable name="6" org.eventb.core.identifier="destinationOf"/>
+    <org.eventb.core.variable name="7" org.eventb.core.identifier="stateOf"/>
+</org.eventb.core.machineFile>

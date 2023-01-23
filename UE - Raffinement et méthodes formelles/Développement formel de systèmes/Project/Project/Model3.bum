@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="Model2"/>
+    <org.eventb.core.seesContext name="(" org.eventb.core.target="Context"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="connection"/>
+    <org.eventb.core.variable name="6" org.eventb.core.identifier="destinationOf"/>
+    <org.eventb.core.variable name="7" org.eventb.core.identifier="stateOf"/>
+    <org.eventb.core.variable name="evt3" org.eventb.core.identifier="messageOf"/>
+    <org.eventb.core.variable name="evt=" org.eventb.core.identifier="routingTable"/>
+    <org.eventb.core.event name="evt&gt;" org.eventb.core.comment=" " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+    <org.eventb.core.event name="evt?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CONNECT">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="CONNECT"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DISCONNECT">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="DISCONNECT"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SEND">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SEND"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd6" org.eventb.core.predicate="routingTable(node↦destinationOf(message)) ≠ ∅"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtB" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RECIEVE">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="RECIEVE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtC" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="LOSE">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="LOSE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtD" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="STORE">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="STORE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="FORWARD">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="FORWARD"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evtF" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DISCOVER">
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="routingTable(node1↦destinationOf(message)) = ∅"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="routingTable ≔ routingTable  {(node1↦destinationOf(message)) ↦ (routingTable(node1↦destinationOf(message)) ∪ {node2}) } " org.eventb.core.label="act1"/>
+        <org.eventb.core.parameter name="*" org.eventb.core.identifier="node1"/>
+        <org.eventb.core.parameter name="+" org.eventb.core.identifier="message"/>
+        <org.eventb.core.parameter name="," org.eventb.core.identifier="node2"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="node2 ∈ connection(node1)"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="routingTable(node2↦destinationOf(message)) ≠ ∅"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd4" org.eventb.core.predicate="message ∈ MESSAGES"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd5" org.eventb.core.predicate="node1 ∈ NODES"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd6" org.eventb.core.predicate="node2 ∈ NODES"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>
