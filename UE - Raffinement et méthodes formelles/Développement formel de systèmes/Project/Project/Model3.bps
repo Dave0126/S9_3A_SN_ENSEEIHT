@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.psFile>
-    <org.eventb.core.psStatus name="SEND/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="DISCOVER/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="DISCOVER/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="DISCOVER/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="DISCOVER/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="DISCOVER/routingTable/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="16" org.eventb.core.psManual="true"/>
-</org.eventb.core.psFile>

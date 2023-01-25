@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="INITIALISATION/act7/FIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="CONNECT/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="CONNECT/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCONNECT/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="DISCONNECT/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="SEND/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LOSE/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LOSE/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="FORWARD/grd8/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/grd8/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="DISCOVER/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="DISCOVER/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

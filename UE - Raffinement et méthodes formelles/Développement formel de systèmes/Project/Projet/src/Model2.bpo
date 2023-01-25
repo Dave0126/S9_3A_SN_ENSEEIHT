@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="19">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="MESSAGES" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+        <org.eventb.core.poIdentifier name="LOST" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="RECEIVED" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="SENT" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="IDLE" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poPredicate name="RECEIVEE" org.eventb.core.predicate="NODES≠(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="RECEIVEF" org.eventb.core.predicate="partition(STATES,{SENT},{RECEIVED},{LOST},{IDLE})" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.axiom#1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="stateOf" org.eventb.core.type="ℙ(MESSAGES×STATES)"/>
+        <org.eventb.core.poIdentifier name="destinationOf" org.eventb.core.type="ℙ(MESSAGES×NODES)"/>
+        <org.eventb.core.poIdentifier name="routingTable" org.eventb.core.type="ℙ(NODES×NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="messageOf" org.eventb.core.type="ℙ(NODES×ℙ(MESSAGES))"/>
+        <org.eventb.core.poIdentifier name="connection" org.eventb.core.type="ℙ(NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="nextNodeOf" org.eventb.core.type="ℙ(MESSAGES×ℙ(NODES))"/>
+        <org.eventb.core.poPredicate name="destinationOg" org.eventb.core.predicate="connection∈NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="destinationOh" org.eventb.core.predicate="destinationOf∈MESSAGES → NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.invariant#1"/>
+        <org.eventb.core.poPredicate name="destinationOi" org.eventb.core.predicate="stateOf∈MESSAGES → STATES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="destinationOj" org.eventb.core.predicate="messageOf∈NODES → ℙ(MESSAGES)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.invariant#evt4"/>
+        <org.eventb.core.poPredicate name="destinationOk" org.eventb.core.predicate="nextNodeOf∈MESSAGES → ℙ(NODES)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.invariant#evt6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOg">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="routingTable'∈NODES × NODES → {∅ ⦂ ℙ(NODES)}" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt4|org.eventb.core.action#'"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="routingTable'∈NODES × NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#8"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act7/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOg">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="connection'∈NODES → {∅ ⦂ ℙ(NODES)}" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#'|org.eventb.core.action#'"/>
+            <org.eventb.core.poPredicate name="(" org.eventb.core.predicate="destinationOf'∈MESSAGES → NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#'|org.eventb.core.action#)"/>
+            <org.eventb.core.poPredicate name=")" org.eventb.core.predicate="stateOf'∈MESSAGES → {IDLE}" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#'|org.eventb.core.action#*"/>
+            <org.eventb.core.poPredicate name="*" org.eventb.core.predicate="messageOf'∈NODES → ℙ(MESSAGES)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#8|org.eventb.core.action#'"/>
+            <org.eventb.core.poPredicate name="+" org.eventb.core.predicate="nextNodeOf'∈MESSAGES → {∅ ⦂ ℙ(NODES)}" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#8|org.eventb.core.action#("/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="NODES × NODES → {∅ ⦂ ℙ(NODES)}≠(∅ ⦂ ℙ(ℙ(NODES×NODES×ℙ(NODES))))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt4|org.eventb.core.action#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt4|org.eventb.core.action#'"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOg"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOg" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="nextNodeOf'" org.eventb.core.type="ℙ(MESSAGES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="connection'" org.eventb.core.type="ℙ(NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="routingTable'" org.eventb.core.type="ℙ(NODES×NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="destinationOf'" org.eventb.core.type="ℙ(MESSAGES×NODES)"/>
+        <org.eventb.core.poIdentifier name="messageOf'" org.eventb.core.type="ℙ(NODES×ℙ(MESSAGES))"/>
+        <org.eventb.core.poIdentifier name="stateOf'" org.eventb.core.type="ℙ(MESSAGES×STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOg" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOg" org.eventb.core.poStamp="19"/>
+    <org.eventb.core.poSequent name="CONNECT/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOh"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="routingTable{node1 ↦ node2 ↦ routingTable(node1 ↦ node2)∪{node2}}∈NODES × NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#9"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poSequent#CONNECT\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CONNECT/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOh"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="node1 ↦ node2∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt5|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt5|org.eventb.core.action#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOh"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOh" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node1" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="node2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="connection'" org.eventb.core.type="ℙ(NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="routingTable'" org.eventb.core.type="ℙ(NODES×NODES×ℙ(NODES))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOh" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOh" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="node1∈NODES∧node2∈NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#+|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="node1≠node2" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#+|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="node2∉connection(node1)" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#+|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="DISCONNECT/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOi"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="routingTable{node1 ↦ node2 ↦ routingTable(node1 ↦ node2) ∖ {node2}}∈NODES × NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poSequent#DISCONNECT\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCONNECT/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOi"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="node1 ↦ node2∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt6|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt6|org.eventb.core.action#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOi"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOi" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node1" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="node2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="connection'" org.eventb.core.type="ℙ(NODES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="routingTable'" org.eventb.core.type="ℙ(NODES×NODES×ℙ(NODES))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOi" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOi" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="node1∈NODES∧node2∈NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#,|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="node2∈connection(node1)" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#,|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="node1≠node2" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#,|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="SEND/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOjmessagg"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt7|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt7|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOjmessagg"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOj" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="stateOf'" org.eventb.core.type="ℙ(MESSAGES×STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOjmessagg" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOj" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#-|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="destinationOf(message)≠node" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#-|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="node∈NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#-|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="stateOf(message)=IDLE" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#-|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="message∈messageOf(node)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#;|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOj" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOjmessagg" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="routingTable(node ↦ destinationOf(message))≠(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt7|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOk" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="stateOf'" org.eventb.core.type="ℙ(MESSAGES×STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOk" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOk" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#.|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="node∈NODES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#.|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="stateOf(message)=SENT" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#.|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="destinationOf(message)=node" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#.|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="message∈messageOf(node)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#=|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LOSE/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagh"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagh"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="LOSE/grd7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagj"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagj"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOl" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="messageOf'" org.eventb.core.type="ℙ(NODES×ℙ(MESSAGES))"/>
+        <org.eventb.core.poIdentifier name="stateOf'" org.eventb.core.type="ℙ(MESSAGES×STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOlmessagh" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOl" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#2|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="stateOf(message)=SENT" org.eventb.core.source="/Project/Model.bum|org.eventb.core.machineFile#Model|org.eventb.core.event#2|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="message∈messageOf(node)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#&gt;|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="node∈NODES" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#&gt;|org.eventb.core.guard#1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOlmessagj" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagh" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="node≠destinationOf(message)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOl" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOlmessagj" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="routingTable(node ↦ destinationOf(message))=(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt9|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOm" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="messageOf'" org.eventb.core.type="ℙ(NODES×ℙ(MESSAGES))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOm" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOm" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="node∈NODES" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt1|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt1|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="node∈nextNodeOf(message)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt1|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="message∉messageOf(node)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt1|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="stateOf(message)=SENT" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt1|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="FORWARD/grd8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOn-"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node1 ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt;|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt;|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOn-"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOn" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="nextNodeOf'" org.eventb.core.type="ℙ(MESSAGES×ℙ(NODES))"/>
+        <org.eventb.core.poIdentifier name="node1" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="node2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="messageOf'" org.eventb.core.type="ℙ(NODES×ℙ(MESSAGES))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOn-" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOn" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="node1∈NODES∧node2∈NODES" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="message∈messageOf(node1)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="node2∈connection(node1)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#2"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="node1≠node2" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="node1≠destinationOf(message)" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="stateOf(message)=SENT" org.eventb.core.source="/Project/Model1.bum|org.eventb.core.machineFile#Model1|org.eventb.core.event#evt2|org.eventb.core.guard#6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOn" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOn-" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="node2∈routingTable(node1 ↦ destinationOf(message))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evt;|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="DISCOVER/grd1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node1 ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOo"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="node1∈dom(connection)∧connection∈NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node2 ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/grd7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(stateOf)∧stateOf∈MESSAGES ⇸ STATES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#2"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/grd8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo-"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo-"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="routingTable{node1 ↦ destinationOf(message) ↦ routingTable(node1 ↦ destinationOf(message))∪{node2}}∈NODES × NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poSequent#DISCOVER\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="DISCOVER/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="message∈dom(destinationOf)∧destinationOf∈MESSAGES ⇸ NODES∧node1 ↦ destinationOf(message)∈dom(routingTable)∧routingTable∈NODES × NODES ⇸ ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTALLHYPdestinationOo"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdestinationOo" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poIdentifier name="node1" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="node2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="message" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="routingTable'" org.eventb.core.type="ℙ(NODES×NODES×ℙ(NODES))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOo'" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTIDENTdestinationOo" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="routingTable(node1 ↦ destinationOf(message))=(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOo(" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo'" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="node2∈connection(node1)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOo," org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo(" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="routingTable(node2 ↦ destinationOf(message))≠(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="message∈MESSAGES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="node1∈NODES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="node2∈NODES" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPdestinationOo-" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo," org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="stateOf(message)=IDLE" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdestinationOo" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#EVTHYPdestinationOo-" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="node1≠destinationOf(message)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.event#evtF|org.eventb.core.guard#3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Model2.bpo|org.eventb.core.poFile#Model2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="routingTable∈NODES × NODES → ℙ(NODES)" org.eventb.core.source="/Project/Model2.bum|org.eventb.core.machineFile#Model2|org.eventb.core.invariant#evt&gt;"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

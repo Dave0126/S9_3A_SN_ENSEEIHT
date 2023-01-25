@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+    <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm2" org.eventb.core.predicate="NODES≠(∅ ⦂ ℙ(NODES))" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="(" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(STATES,{SENT},{RECEIVED},{LOST},{IDLE})" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.axiom#1" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scCarrierSet name="STATES" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.carrierSet#-" org.eventb.core.type="ℙ(STATES)"/>
+    <org.eventb.core.scCarrierSet name="MESSAGES" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(MESSAGES)"/>
+    <org.eventb.core.scCarrierSet name="NODES" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(NODES)"/>
+    <org.eventb.core.scConstant name="LOST" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.constant#+" org.eventb.core.type="STATES"/>
+    <org.eventb.core.scConstant name="RECEIVED" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.constant#*" org.eventb.core.type="STATES"/>
+    <org.eventb.core.scConstant name="SENT" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.constant#0" org.eventb.core.type="STATES"/>
+    <org.eventb.core.scConstant name="IDLE" org.eventb.core.source="/Project/Context.buc|org.eventb.core.contextFile#Context|org.eventb.core.constant#\/" org.eventb.core.type="STATES"/>
+</org.eventb.core.scContextFile>
