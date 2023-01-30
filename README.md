@@ -9,7 +9,7 @@
 |UEs|科目|占比|考核形式|日期|是否结束|
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |UE - Systèmes Temps Réel|[Systèmes et Ordonnancement Temps Réel](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20Temps%20R%C3%A9el/Syst%C3%A8mes%20et%20Ordonnancement%20Temps%20R%C3%A9el)|40%|Examen|01/06|✅|
-|-|[Langage pour le temps réel](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20Temps%20R%C3%A9el/Langage%20pour%20le%20temps%20r%C3%A9el)|30%|Examen|01/30||
+|-|[Langage pour le temps réel](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20Temps%20R%C3%A9el/Langage%20pour%20le%20temps%20r%C3%A9el)|30%|Examen|01/30|✅|
 |-|[Projet - IoT Arduino](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20Temps%20R%C3%A9el/Projet%20-%20IoT%20Arduino) |30%|Projet|01/23|✅|
 |UE - Systèmes répartis et sécurité|[Systèmes et algorithmes répartis](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20r%C3%A9partis%20et%20s%C3%A9curit%C3%A9/Syst%C3%A8mes%20r%C3%A9partis)|33%|Examen|12/06|✅|
 |-|[Sécurité et informatique légale](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Syst%C3%A8mes%20r%C3%A9partis%20et%20s%C3%A9curit%C3%A9/S%C3%A9curit%C3%A9%20et%20informatique%20l%C3%A9gale)|34%|Examen|01/16|✅|
@@ -23,7 +23,7 @@
 |-|[IHM (Interface Homme Machine)](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/IHM%20(Interface%20Homme%20Machine))|25%|Projet|||
 |-|[Sureté de fonctionnement](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/Suret%C3%A9%20de%20fonctionnement)|25%|TPs|12/15|✅|
 |UE - à choix|[Infrastructure for Cloud](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20%C3%A0%20choix/Infrastructure%20for%20Could)|50%|Examen|11/21|✅|
-|-|[Infrastructure for Big Data](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20%C3%A0%20choix/Infrastructure%20for%20Big%20Data)|50%|Examen|01/30||
+|-|[Infrastructure for Big Data](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20%C3%A0%20choix/Infrastructure%20for%20Big%20Data)|50%|Examen|01/30|✅|
 
 ### Schedule of JURY
 |内容|日期|是否结束|
