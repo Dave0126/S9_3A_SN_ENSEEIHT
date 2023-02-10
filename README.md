@@ -20,10 +20,14 @@
 |UE - Interfaces d'accès à l'information|[Web sémantique](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/Web%20Semantic)|17.5%|Examen|12/13|✅|
 |-|[TPs - Web sémantique](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/Web%20Semantic/TPs)|7.5%|TPs||✅|
 |-|[Recherche d'information](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/Recherche%20d'information)|25%|Examen|02/02|✅|
-|-|[IHM (Interface Homme Machine)](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/IHM%20(Interface%20Homme%20Machine))|25%|Projet|02/10||
+|-|[IHM (Interface Homme Machine)](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/IHM%20(Interface%20Homme%20Machine))|25%|Projet|02/10|✅|
 |-|[Sureté de fonctionnement](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20Interfaces%20d'acc%C3%A8s%20%C3%A0%20l'information/Suret%C3%A9%20de%20fonctionnement)|25%|TPs|12/15|✅|
 |UE - à choix|[Infrastructure for Cloud](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20%C3%A0%20choix/Infrastructure%20for%20Could)|50%|Examen|11/21|✅|
 |-|[Infrastructure for Big Data](https://github.com/Dave0126/S9_3A_SN_ENSEEIHT/tree/master/UE%20-%20%C3%A0%20choix/Infrastructure%20for%20Big%20Data)|50%|Examen|01/30|✅|
+|UE - SHS|Professional English|30%|Examen<br>& Projet<br>& Oral|-|✅|
+|-|Bureau d'Etudes Industrielles<br>/Conférence|30%|Attendance rate|-|✅|
+|-|IT and Computer Law|20%|Examen|-|✅|
+|-|Strategic and Critical Thinking|20%|Projet|-|✅|
 
 ### Schedule of JURY
 |内容|日期|是否结束|
