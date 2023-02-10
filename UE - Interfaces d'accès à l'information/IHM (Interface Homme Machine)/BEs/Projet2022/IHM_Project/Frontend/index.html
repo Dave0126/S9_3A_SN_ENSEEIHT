@@ -1,0 +1,91 @@
+<!--
+index.html
+Frontend version 1.0
+Created by Ingenuity i/o on 2023/02/06
+
+no description
+Copyright © 2022 Ingenuity i/o. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="utf-8">
+	  	<title>Pseudo-agent Ingescape</title>
+	  	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+
+  <body>
+      <div class="container">
+          <br>
+          <div class="center-div" >
+              Server URL <input type="text" id="serverURL">
+              <input type="button" value="Connect" onclick="setServerURL()" />
+              <div id="connectedToServer" style="vertical-align: middle; display:inline-block;border-radius: 30px;background: red; width:15px;height:15px"></div>
+          </div>
+          <br>
+          <div class="center-div">
+              <span id="name" style="font-size: 20px;"></span>
+          </div>
+          <br>
+          <div class="center-div">
+              <input type="button" value="Action button" onclick="executeAction()" />
+          </div>
+          <br>
+
+          <table>
+              <tr>
+                <td valign="top">
+                <table>
+                    <tbody>
+                        <tr align="center">
+                            <td colspan=2><b>Outputs</b></td>
+                        </tr>
+                        <tr>
+                            <td align="right">coin1</td>
+                            <td align="left">
+                                <input type="text" id="coin1_output">
+                                <input type="button" value="&#10003" onclick="setcoin1Output()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">coin2</td>
+                            <td align="left">
+                                <input type="text" id="coin2_output">
+                                <input type="button" value="&#10003" onclick="setcoin2Output()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">timestamp_from</td>
+                            <td align="left">
+                                <input type="number" id="timestamp_from_output" step="1">
+                                <input type="button" value="&#10003" onclick="settimestamp_fromOutput()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">timestamp_to</td>
+                            <td align="left">
+                                <input type="number" id="timestamp_to_output" step="1">
+                                <input type="button" value="&#10003" onclick="settimestamp_toOutput()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">generate</td>
+                            <td align="left">
+                                <input type="button" value="&#10003" onclick="setgenerateOutput()"/>
+                            </td>
+                        </tr>
+                  </tbody>
+                </table>
+                </td>
+              </tr>
+          </table>
+      </div>
+
+      <script src="js/ingescape.js" charset="utf-8"></script>
+      <script src="js/index.js" charset="utf-8"></script>
+	</body>
+</html>
+
+
+

@@ -1,0 +1,1099 @@
+{
+    "eventsTimeline": {
+        "events": [
+        ],
+        "patterns": [
+        ],
+        "timelines": [
+            {
+                "eventInstances": [
+                ],
+                "name": "Timeline_1",
+                "order": 0,
+                "patternInstances": [
+                ]
+            }
+        ]
+    },
+    "platform": {
+        "agents": [
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "title",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "backgroundColor",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "clear",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "description": "",
+                            "name": "ui_command",
+                            "type": "STRING"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "Whiteboard",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "lastChatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "lastAction",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "ui_error",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chat"
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "snapshot",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "base64Png",
+                                            "type": "DATA"
+                                        }
+                                    ],
+                                    "name": "snapshotResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "clear"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "type",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "fill",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "stroke",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "strokeWidth",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addShape",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "text",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addText",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "base64",
+                                    "type": "DATA"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImage",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImageFromUrl",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "remove",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "dx",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "dy",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "translate",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "moveTo",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "getElementIds",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elementIds"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "getElements",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elements"
+                                }
+                            ]
+                        }
+                    ],
+                    "version": ""
+                },
+                "identity": "Whiteboard",
+                "instances": [
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard",
+                        "hostname": "stallman.enseeiht.fr",
+                        "ipAddress": "147.127.133.120",
+                        "mac": "D8:9E:F3:41:1E:82"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --port 5550",
+                        "hostname": "stallman.enseeiht.fr",
+                        "ipAddress": "147.127.133.120",
+                        "mac": "D8:9E:F3:41:1E:82"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --device enp0s31f6 --port 5550",
+                        "hostname": "sunfire.enseeiht.fr",
+                        "ipAddress": "147.127.133.185",
+                        "mac": "D8:9E:F3:41:22:F3"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --port 5550",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 673,
+                    "positionY": 603,
+                    "positionZ": 7.629999999999881,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "coin1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "coin2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "generate",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "description": "",
+                            "name": "start_time",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "end_time",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "ChartGenerator",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "chart1_uri",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chart2_uri",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "error_msg",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "1.0"
+                },
+                "identity": "ChartGenerator",
+                "instances": [
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550",
+                        "hostname": "sunfire.enseeiht.fr",
+                        "ipAddress": "147.127.133.185",
+                        "mac": "D8:9E:F3:41:22:F3"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550 --verbose",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 642,
+                    "positionY": 264,
+                    "positionZ": 6.929999999999896,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "Frontend",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "coin1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "coin2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "timestamp_from",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "timestamp_to",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "generate",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "1.0"
+                },
+                "identity": "Frontend",
+                "instances": [
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": -282,
+                    "positionY": 508,
+                    "positionZ": 7.699999999999879,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "ca2ffa9faabe4781a21e590fabeabc67",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "Proxy",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "dynamic"
+                },
+                "identity": "3E9B1E2DC269D5A9F80C6C835355553B",
+                "instances": [
+                    {
+                        "commandLine": "\"/mnt/n7fs/ens/tp_queinnec/Ingescape/bin/igsProxy\" --port 5550 --device \"enp0s31f6\" --name Proxy --license \"/home/bgerman/Documents/Ingescape/licenses/\" --ws ws://localhost:5000",
+                        "hostname": "hydre.enseeiht.fr",
+                        "ipAddress": "147.127.133.10"
+                    }
+                ],
+                "lastKnowAgentUUID": "3E9B1E2DC269D5A9F80C6C835355553B",
+                "view": {
+                    "height": 44,
+                    "isCollapsed": false,
+                    "positionX": 672,
+                    "positionY": 512,
+                    "positionZ": 5.579999999999925,
+                    "width": 252
+                }
+            }
+        ],
+        "mappings": [
+            {
+                "fromAgent": "36a6fa5b-5429-495c-8a9d-e48d827f87cb",
+                "fromInput": "trigger",
+                "toAgent": "98e2523a-db8f-4765-a661-6b93e891ece6",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "95472d4f-bcb5-41a5-b87b-83845141c290",
+                "fromInput": "trigger",
+                "toAgent": "98e2523a-db8f-4765-a661-6b93e891ece6",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "coin1",
+                "toAgent": "36a6fa5b-5429-495c-8a9d-e48d827f87cb",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "coin2",
+                "toAgent": "95472d4f-bcb5-41a5-b87b-83845141c290",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "57b7c3fa-ce72-49a8-83c8-af4587d7f10c",
+                "fromInput": "wildcard",
+                "toAgent": "ChartGenerator",
+                "toOutput": "error_msg"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "start_time",
+                "toAgent": "7c0fef4d-ce34-4cd9-b81e-d0760accd570",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "end_time",
+                "toAgent": "8860baa2-a012-4914-b945-f215c39bbc91",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "7c0fef4d-ce34-4cd9-b81e-d0760accd570",
+                "fromInput": "trigger",
+                "toAgent": "98e2523a-db8f-4765-a661-6b93e891ece6",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "8860baa2-a012-4914-b945-f215c39bbc91",
+                "fromInput": "trigger",
+                "toAgent": "98e2523a-db8f-4765-a661-6b93e891ece6",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "display",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart1_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "chart2_url",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart2_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "chart1_url",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart1_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "error",
+                "toAgent": "ChartGenerator",
+                "toOutput": "error_msg"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "generate",
+                "toAgent": "5e649961-9d7f-4c83-912d-09c6d399968d",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "c1",
+                "toAgent": "36a6fa5b-5429-495c-8a9d-e48d827f87cb",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "c2",
+                "toAgent": "95472d4f-bcb5-41a5-b87b-83845141c290",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "from",
+                "toAgent": "7c0fef4d-ce34-4cd9-b81e-d0760accd570",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "to",
+                "toAgent": "8860baa2-a012-4914-b945-f215c39bbc91",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "Whiteboard",
+                "fromInput": "title",
+                "toAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "toOutput": "out"
+            }
+        ],
+        "splits": [
+        ],
+        "splitters": [
+        ],
+        "tools": [
+            {
+                "data": {
+                    "entry 0": "BTC"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "36a6fa5b-5429-495c-8a9d-e48d827f87cb",
+                "instances": [
+                ],
+                "view": {
+                    "height": 79,
+                    "isCollapsed": false,
+                    "positionX": 151,
+                    "positionY": 47,
+                    "positionZ": 7.65999999999988,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "BTC"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "95472d4f-bcb5-41a5-b87b-83845141c290",
+                "instances": [
+                ],
+                "view": {
+                    "height": 52,
+                    "isCollapsed": true,
+                    "positionX": 150,
+                    "positionY": 149,
+                    "positionZ": 7.66999999999988,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                    "entry 0": ""
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "98e2523a-db8f-4765-a661-6b93e891ece6",
+                "instances": [
+                ],
+                "view": {
+                    "height": 52,
+                    "isCollapsed": false,
+                    "positionX": -296,
+                    "positionY": 249,
+                    "positionZ": 7.67999999999988,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "7fc274c8-b06e-429b-9d09-d14878381016",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "wildcard",
+                            "type": "WILDCARD_SINGLE_MAPPING"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "57b7c3fa-ce72-49a8-83c8-af4587d7f10c",
+                "instances": [
+                ],
+                "view": {
+                    "height": 46,
+                    "isCollapsed": false,
+                    "positionX": 1150,
+                    "positionY": 313,
+                    "positionZ": 6.879999999999897,
+                    "width": 399
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "1675694000"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "7c0fef4d-ce34-4cd9-b81e-d0760accd570",
+                "instances": [
+                ],
+                "view": {
+                    "height": 52,
+                    "isCollapsed": false,
+                    "positionX": 150,
+                    "positionY": 258,
+                    "positionZ": 7.579999999999882,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "1675698600"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "8860baa2-a012-4914-b945-f215c39bbc91",
+                "instances": [
+                ],
+                "view": {
+                    "height": 52,
+                    "isCollapsed": false,
+                    "positionX": 149,
+                    "positionY": 364,
+                    "positionZ": 7.589999999999882,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                    "snippet": "59fa2a15-7e63-4e4f-bc9f-ffa4760c0792"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "03e9fdca855542faac2ffbf418ce2aa6",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "chart1_url",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chart2_url",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "error",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "display",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "instances": [
+                ],
+                "view": {
+                    "height": 55,
+                    "isCollapsed": false,
+                    "positionX": 1160,
+                    "positionY": 81,
+                    "positionZ": 7.349999999999887,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                    "entry 0": ""
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "5e649961-9d7f-4c83-912d-09c6d399968d",
+                "instances": [
+                ],
+                "view": {
+                    "height": 52,
+                    "isCollapsed": false,
+                    "positionX": -296,
+                    "positionY": 338,
+                    "positionZ": 7.68999999999988,
+                    "width": 256
+                }
+            },
+            {
+                "data": {
+                    "snippet": "f3ac3a7b-cc5c-40e4-be7a-4f9791b479e8"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "03e9fdca855542faac2ffbf418ce2aa6",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "c1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "c2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "from",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "to",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "out",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "instances": [
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 104,
+                    "positionY": 556,
+                    "positionZ": 7.609999999999881,
+                    "width": 252
+                }
+            }
+        ]
+    },
+    "snippets": [
+        {
+            "code": "// Add two numbers\nlet inputA = Igs.createInput(Context.agent, \"c1\", IOPValueType.STRING);\nlet inputB = Igs.createInput(Context.agent, \"c2\", IOPValueType.STRING);\nlet inputFrom = Igs.createInput(Context.agent, \"from\", IOPValueType.INTEGER);\nlet inputTo = Igs.createInput(Context.agent, \"to\", IOPValueType.INTEGER);\n\nlet titleOut = Igs.createOutput(Context.agent, \"out\", IOPValueType.STRING);\n\ninputA.written.connect(writeTitle);\ninputB.written.connect(writeTitle);\n\n\nfunction writeTitle()\n{\n    let from = new Date(inputFrom.currentValue * 1000);\n    let to = new Date(inputTo.currentValue * 1000);\n    titleOut.write(\"Price comparison between \" + inputA.currentValue + \" and \" + inputB.currentValue \n    + \"\\nFrom \" + from.toString()\n    + \"\\nTo \" + to.toString());\n}\n",
+            "identity": "f3ac3a7b-cc5c-40e4-be7a-4f9791b479e8",
+            "name": "Title builder"
+        },
+        {
+            "code": "// My snippet\nlet input1Run = Igs.createInput(Context.agent, \"chart1_url\", IOPValueType.STRING);\nlet input2Run = Igs.createInput(Context.agent, \"chart2_url\", IOPValueType.STRING);\nlet errorRun = Igs.createInput(Context.agent, \"error\", IOPValueType.STRING);\nlet impulsion = Igs.createInput(Context.agent, \"display\", IOPValueType.IMPULSION);\n\nimpulsion.written.connect(plotImages);\n\nfunction plotImages() {\n    Igs.callService(\"Whiteboard\", \"clear\");\n       \n    // Uhhh, is this by design or a bug?\n    if(errorRun.currentValue == \"\\0\") {\n        Igs.callService(\"Whiteboard\", \"addImageFromUrl\", input1Run.currentValue, Number(100), Number(100));\n        Igs.callService(\"Whiteboard\", \"addImageFromUrl\", input2Run.currentValue, Number(800), Number(100));\n    }\n    else {\n        Igs.callService(\"Whiteboard\", \"addText\", errorRun.currentValue, Number(300), Number(400), String(\"red\"));\n    }\n}\n",
+            "identity": "59fa2a15-7e63-4e4f-bc9f-ffa4760c0792",
+            "name": "Display Charts"
+        }
+    ]
+}

@@ -1,0 +1,812 @@
+{
+    "eventsTimeline": {
+        "events": [
+        ],
+        "patterns": [
+        ],
+        "timelines": [
+            {
+                "eventInstances": [
+                ],
+                "name": "Timeline_1",
+                "order": 0,
+                "patternInstances": [
+                ]
+            }
+        ]
+    },
+    "platform": {
+        "agents": [
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "title",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "backgroundColor",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "clear",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "description": "",
+                            "name": "ui_command",
+                            "type": "STRING"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "Whiteboard",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "lastChatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "lastAction",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "ui_error",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chat"
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "snapshot",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "base64Png",
+                                            "type": "DATA"
+                                        }
+                                    ],
+                                    "name": "snapshotResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "clear"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "type",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "fill",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "stroke",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "strokeWidth",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addShape",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "text",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addText",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "base64",
+                                    "type": "DATA"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImage",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImageFromUrl",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "remove",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "dx",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "dy",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "translate",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "moveTo",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "getElementIds",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elementIds"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "getElements",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elements"
+                                }
+                            ]
+                        }
+                    ],
+                    "version": ""
+                },
+                "identity": "Whiteboard",
+                "instances": [
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard",
+                        "hostname": "stallman.enseeiht.fr",
+                        "ipAddress": "147.127.133.120",
+                        "mac": "D8:9E:F3:41:1E:82"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --port 5550",
+                        "hostname": "stallman.enseeiht.fr",
+                        "ipAddress": "147.127.133.120",
+                        "mac": "D8:9E:F3:41:1E:82"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --device enp0s31f6 --port 5550",
+                        "hostname": "sunfire.enseeiht.fr",
+                        "ipAddress": "147.127.133.185",
+                        "mac": "D8:9E:F3:41:22:F3"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/whiteboard/opt/Whiteboard/bin/Whiteboard --port 5550",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 673,
+                    "positionY": 603,
+                    "positionZ": 7.629999999999881,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "coin1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "coin2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "generate",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "description": "",
+                            "name": "start_time",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "end_time",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "ChartGenerator",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "chart1_uri",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chart2_uri",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "error_msg",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "1.0"
+                },
+                "identity": "ChartGenerator",
+                "instances": [
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550",
+                        "hostname": "sunfire.enseeiht.fr",
+                        "ipAddress": "147.127.133.185",
+                        "mac": "D8:9E:F3:41:22:F3"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    },
+                    {
+                        "commandLine": "/home/hhathout/Annee_3/IHM/crypto-api/venv/bin/python /home/hhathout/Annee_3/IHM/project/ChartGenerator/src/main.py --device enp0s31f6 --port 5550 --verbose",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 642,
+                    "positionY": 264,
+                    "positionZ": 7.819999999999877,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "Frontend",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "coin1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "coin2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "timestamp_from",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "timestamp_to",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "generate",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "1.0"
+                },
+                "identity": "Frontend",
+                "instances": [
+                    {
+                        "commandLine": "/mnt/n7fs/ens/tp_queinnec/Ingescape/bin/igsProxy --port 5550 --device enp0s31f6 --name Proxy --license /home/hhathout/Documents/Ingescape/licenses/ --ws ws://localhost:5000",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 104,
+                    "positionY": 248,
+                    "positionZ": 7.809999999999877,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "ca2ffa9faabe4781a21e590fabeabc67",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "Proxy",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "8ecbf428-6e40-4b69-ab6d-d5023d3f4dc6",
+                "instances": [
+                    {
+                        "commandLine": "\"/mnt/n7fs/ens/tp_queinnec/Ingescape/bin/igsProxy\" --port 5550 --device \"enp0s31f6\" --name Proxy --license \"/home/hhathout/Documents/Ingescape/licenses/\" --ws ws://localhost:5000",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "lastKnowAgentUUID": "A6FED36ECD5CF185B3E11C0FC4F06195",
+                "view": {
+                    "height": 44,
+                    "isCollapsed": false,
+                    "positionX": 661,
+                    "positionY": 500,
+                    "positionZ": 7.839999999999876,
+                    "width": 252
+                }
+            }
+        ],
+        "mappings": [
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "display",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart1_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "chart2_url",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart2_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "chart1_url",
+                "toAgent": "ChartGenerator",
+                "toOutput": "chart1_uri"
+            },
+            {
+                "fromAgent": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "fromInput": "error",
+                "toAgent": "ChartGenerator",
+                "toOutput": "error_msg"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "coin1",
+                "toAgent": "Frontend",
+                "toOutput": "coin1"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "coin2",
+                "toAgent": "Frontend",
+                "toOutput": "coin2"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "start_time",
+                "toAgent": "Frontend",
+                "toOutput": "timestamp_from"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "end_time",
+                "toAgent": "Frontend",
+                "toOutput": "timestamp_to"
+            },
+            {
+                "fromAgent": "ChartGenerator",
+                "fromInput": "generate",
+                "toAgent": "Frontend",
+                "toOutput": "generate"
+            },
+            {
+                "fromAgent": "Whiteboard",
+                "fromInput": "title",
+                "toAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "toOutput": "out"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "c1",
+                "toAgent": "Frontend",
+                "toOutput": "coin1"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "c2",
+                "toAgent": "Frontend",
+                "toOutput": "coin2"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "from",
+                "toAgent": "Frontend",
+                "toOutput": "timestamp_from"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "to",
+                "toAgent": "Frontend",
+                "toOutput": "timestamp_to"
+            },
+            {
+                "fromAgent": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "fromInput": "generate",
+                "toAgent": "Frontend",
+                "toOutput": "generate"
+            }
+        ],
+        "splits": [
+        ],
+        "splitters": [
+        ],
+        "tools": [
+            {
+                "data": {
+                    "snippet": "59fa2a15-7e63-4e4f-bc9f-ffa4760c0792"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "03e9fdca855542faac2ffbf418ce2aa6",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "chart1_url",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "chart2_url",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "error",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "display",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "00494bc9-7a08-43f8-8cc6-538de9bedc47",
+                "instances": [
+                ],
+                "view": {
+                    "height": 55,
+                    "isCollapsed": false,
+                    "positionX": 1160,
+                    "positionY": 81,
+                    "positionZ": 7.349999999999887,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                    "snippet": "f3ac3a7b-cc5c-40e4-be7a-4f9791b479e8"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "03e9fdca855542faac2ffbf418ce2aa6",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "c1",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "c2",
+                            "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "from",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "to",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "",
+                            "name": "generate",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "out",
+                            "type": "STRING"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "a7d1f9e1-3807-4338-a3e5-312d51e64015",
+                "instances": [
+                    {
+                        "commandLine": "\"/mnt/n7fs/ens/tp_queinnec/Ingescape/bin/igsProxy\" --port 5550 --device \"enp0s31f6\" --license \"/home/hhathout/Documents/Ingescape/licenses/\"",
+                        "hostname": "succube.enseeiht.fr",
+                        "ipAddress": "147.127.133.3",
+                        "mac": "D8:9E:F3:40:E1:08"
+                    }
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": false,
+                    "positionX": 104,
+                    "positionY": 556,
+                    "positionZ": 7.849999999999876,
+                    "width": 252
+                }
+            }
+        ]
+    },
+    "snippets": [
+        {
+            "code": "// Add two numbers\nlet inputA = Igs.createInput(Context.agent, \"c1\", IOPValueType.STRING);\nlet inputB = Igs.createInput(Context.agent, \"c2\", IOPValueType.STRING);\nlet inputFrom = Igs.createInput(Context.agent, \"from\", IOPValueType.INTEGER);\nlet inputTo = Igs.createInput(Context.agent, \"to\", IOPValueType.INTEGER);\nlet generate = Igs.createInput(Context.agent, \"generate\", IOPValueType.IMPULSION);\n\nlet titleOut = Igs.createOutput(Context.agent, \"out\", IOPValueType.STRING);\n\ngenerate.written.connect(writeTitle);\n\n\nfunction str(val) {\n    if(!val) {\n        return val\n    }\n    \n    let string = val.toString();\n    if(string[string.length - 1] == '\\0') {\n        string = string.substring(0, string.length - 1);\n    }\n    return string;\n}\n\nfunction writeTitle()\n{\n    let from = new Date(inputFrom.currentValue * 1000);\n    let to = new Date(inputTo.currentValue * 1000);\n    titleOut.write(\"Price comparison between \" + str(inputA.currentValue) + \" and \" + str(inputB.currentValue) \n    + \"\\nFrom \" + from.toString()\n    + \"\\nTo \" + to.toString());\n}\n",
+            "identity": "f3ac3a7b-cc5c-40e4-be7a-4f9791b479e8",
+            "name": "Title builder"
+        },
+        {
+            "code": "// My snippet\nlet input1Run = Igs.createInput(Context.agent, \"chart1_url\", IOPValueType.STRING);\nlet input2Run = Igs.createInput(Context.agent, \"chart2_url\", IOPValueType.STRING);\nlet errorRun = Igs.createInput(Context.agent, \"error\", IOPValueType.STRING);\nlet impulsion = Igs.createInput(Context.agent, \"display\", IOPValueType.IMPULSION);\n\nimpulsion.written.connect(plotImages);\n\nfunction plotImages() {\n    Igs.callService(\"Whiteboard\", \"clear\");\n       \n    // Uhhh, is this by design or a bug?\n    if(errorRun.currentValue == \"\\0\") {\n        Igs.callService(\"Whiteboard\", \"addImageFromUrl\", input1Run.currentValue, Number(100), Number(100));\n        Igs.callService(\"Whiteboard\", \"addImageFromUrl\", input2Run.currentValue, Number(800), Number(100));\n    }\n    else {\n        Igs.callService(\"Whiteboard\", \"addText\", errorRun.currentValue, Number(300), Number(400), String(\"red\"));\n    }\n}\n",
+            "identity": "59fa2a15-7e63-4e4f-bc9f-ffa4760c0792",
+            "name": "Display Charts"
+        }
+    ]
+}
