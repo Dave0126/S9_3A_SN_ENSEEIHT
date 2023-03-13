@@ -32,7 +32,7 @@
 ### Schedule of JURY
 |内容|日期|是否结束|
 |:----:|:----:|:----:|
-|S9: Session 1|||
+|S9: Session 1|2023-02-28|✅|
 |S9: Session 2|||
 
 ### INTRODUCTION
