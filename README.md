@@ -33,7 +33,7 @@
 |内容|日期|是否结束|
 |:----:|:----:|:----:|
 |S9: Session 1|2023-02-28|✅|
-|S9: Session 2|||
+|S9: Session 2||✅|
 
 ### INTRODUCTION
 这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2022~2023学年-第1学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-3eme-annee-subprogram-n7i53-181/annee-3a-informatique-et-telecommunication-sn-NEEN/choix-de-parc-semestre-9-3a-info-et-telecom-sn-N9EN/semestre-9-sn-parcours-systemes-logiciels-N9ENAL.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen** 的Sujet、Slide、Source Code 以及我个人的 Rapport 和部分笔记。希望能对你有所帮助。
@@ -49,3 +49,4 @@
   * EN：If you are a student of ENSEEIHT, <u>***DO NOT copy anything directly into your own homework***</u>. Otherwise, you will be considered <u>***CHEATING***</u>, and you will be dealt with with a score of 0.
   * FR: Si vous êtes étudiant(e) à l'ENSEEIHT, merci de <u>***NE RIEN copier directement dans vos devoirs***</u>. Sinon, vous serez considéré comme « <u>***TRICHE***</u> » et vous ne validez pas le cours.
 
+最后的最后，愿你享受在这里学习的过程。祝好。
